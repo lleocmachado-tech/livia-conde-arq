@@ -13,6 +13,7 @@
 - [ ] Revisar todos os textos do site (escritos a partir do PDF de apresentação)
 - [ ] Revisar o FAQ (respostas genéricas, sem preços nem prazos; atualizar também o JSON-LD `FAQPage`)
 - [ ] Descrições dos 7 serviços e dos 4 diferenciais de Gerenciamento de Obras
+- [ ] Imagem de cada serviço (aba da seção Serviços): hoje reaproveita renders do portfólio; trocar por fotos que combinem com cada serviço
 - [ ] Texto da Política de Privacidade (provisório): prazo de retenção, razão social/CNPJ se houver
 
 ## Publicação

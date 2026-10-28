@@ -144,11 +144,11 @@ try {
     </div>
 
     <ol class="pillars">
-      <li class="reveal" style="--d:0s"><span class="pillar-n">01</span><h3>Design atemporal</h3><p>Soluções que não saem de moda.</p></li>
-      <li class="reveal" style="--d:.08s"><span class="pillar-n">02</span><h3>Funcionalidade</h3><p>Cada metro pensado para o uso real.</p></li>
-      <li class="reveal" style="--d:.16s"><span class="pillar-n">03</span><h3>Bem-estar</h3><p>Luz, ventilação e conforto para quem vive ali.</p></li>
-      <li class="reveal" style="--d:.24s"><span class="pillar-n">04</span><h3>Personalidade</h3><p>Projetos com a sua cara, não fórmula pronta.</p></li>
-      <li class="reveal" style="--d:.32s"><span class="pillar-n">05</span><h3>Beleza</h3><p>Proporção, materiais e detalhes que encantam.</p></li>
+      <li class="reveal" style="--d:0s"><span class="pillar-n" aria-hidden="true"></span><h3>Design atemporal</h3><p>Soluções que não saem de moda.</p></li>
+      <li class="reveal" style="--d:.08s"><span class="pillar-n" aria-hidden="true"></span><h3>Funcionalidade</h3><p>Cada metro pensado para o uso real.</p></li>
+      <li class="reveal" style="--d:.16s"><span class="pillar-n" aria-hidden="true"></span><h3>Bem-estar</h3><p>Luz, ventilação e conforto para quem vive ali.</p></li>
+      <li class="reveal" style="--d:.24s"><span class="pillar-n" aria-hidden="true"></span><h3>Personalidade</h3><p>Projetos com a sua cara, não fórmula pronta.</p></li>
+      <li class="reveal" style="--d:.32s"><span class="pillar-n" aria-hidden="true"></span><h3>Beleza</h3><p>Proporção, materiais e detalhes que encantam.</p></li>
     </ol>
 
     <div class="about">
@@ -172,55 +172,56 @@ try {
       <h2 id="servicos-titulo">Como podemos <em>ajudar</em></h2>
     </header>
 
-    <div class="acc acc--services">
-      <div class="acc-item reveal" data-servico="Projeto Residencial">
-        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv1"><span class="acc-num">01</span><span class="acc-name">Projeto Residencial</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
-        <div class="acc-panel" id="sv1" role="region"><div>
+    <div class="svc">
+      <div class="svc-tabs reveal" role="tablist" aria-label="Serviços" aria-orientation="vertical">
+        <button class="svc-tab" role="tab" id="tab0" aria-selected="true" aria-controls="pane0" tabindex="0" data-servico="Projeto Residencial" type="button">Projeto Residencial</button>
+        <button class="svc-tab" role="tab" id="tab1" aria-selected="false" aria-controls="pane1" tabindex="-1" data-servico="Projeto Comercial" type="button">Projeto Comercial</button>
+        <button class="svc-tab" role="tab" id="tab2" aria-selected="false" aria-controls="pane2" tabindex="-1" data-servico="Design de Interiores" type="button">Design de Interiores</button>
+        <button class="svc-tab" role="tab" id="tab3" aria-selected="false" aria-controls="pane3" tabindex="-1" data-servico="Regularização de Imóveis" type="button">Regularização de Imóveis</button>
+        <button class="svc-tab" role="tab" id="tab4" aria-selected="false" aria-controls="pane4" tabindex="-1" data-servico="Unificação e Desmembramento de Lotes" type="button">Unificação e Desmembramento de Lotes</button>
+        <button class="svc-tab" role="tab" id="tab5" aria-selected="false" aria-controls="pane5" tabindex="-1" data-servico="Assessoria e Visitas Técnicas" type="button">Assessoria e Visitas Técnicas</button>
+        <button class="svc-tab" role="tab" id="tab6" aria-selected="false" aria-controls="pane6" tabindex="-1" data-servico="Gerenciamento de Obras" type="button">Gerenciamento de Obras</button>
+      </div>
+      <div class="svc-stage reveal">
+        <div class="svc-pane" role="tabpanel" id="pane0" aria-labelledby="tab0">
+          <figure class="svc-fig"><img src="assets/img/projetos/entardecer-fachada-thumb.jpg" alt="Fachada de residência ao entardecer" width="900" height="502" loading="lazy"></figure>
+          <h3>Projeto Residencial</h3>
           <p>Casas e apartamentos pensados para o seu jeito de viver, do primeiro traço ao projeto executivo.</p>
-          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
-        </div></div>
-      </div>
-      <div class="acc-item reveal" data-servico="Projeto Comercial">
-        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv2"><span class="acc-num">02</span><span class="acc-name">Projeto Comercial</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
-        <div class="acc-panel" id="sv2" role="region"><div>
+        </div>
+        <div class="svc-pane" role="tabpanel" id="pane1" aria-labelledby="tab1" hidden>
+          <figure class="svc-fig"><img src="assets/img/projetos/noturna-fachada-thumb.jpg" alt="Fachada iluminada à noite" width="725" height="900" loading="lazy"></figure>
+          <h3>Projeto Comercial</h3>
           <p>Lojas, consultórios e escritórios que mostram a sua marca e funcionam bem no dia a dia.</p>
-          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
-        </div></div>
-      </div>
-      <div class="acc-item reveal" data-servico="Design de Interiores">
-        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv3"><span class="acc-num">03</span><span class="acc-name">Design de Interiores</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
-        <div class="acc-panel" id="sv3" role="region"><div>
+        </div>
+        <div class="svc-pane" role="tabpanel" id="pane2" aria-labelledby="tab2" hidden>
+          <figure class="svc-fig"><img src="assets/img/projetos/living-tropical-thumb.jpg" alt="Living com pé-direito duplo e papel de parede botânico" width="502" height="900" loading="lazy"></figure>
+          <h3>Design de Interiores</h3>
           <p>Layout, materiais, iluminação e mobiliário pensados juntos, para ambientes com a sua história.</p>
-          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
-        </div></div>
-      </div>
-      <div class="acc-item reveal" data-servico="Regularização de Imóveis">
-        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv4"><span class="acc-num">04</span><span class="acc-name">Regularização de Imóveis</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
-        <div class="acc-panel" id="sv4" role="region"><div>
+        </div>
+        <div class="svc-pane" role="tabpanel" id="pane3" aria-labelledby="tab3" hidden>
+          <figure class="svc-fig"><img src="assets/img/projetos/branca-fachada-thumb.jpg" alt="Fachada branca com ripado e pedra" width="900" height="675" loading="lazy"></figure>
+          <h3>Regularização de Imóveis</h3>
           <p>Orientação e projetos para deixar a documentação do seu imóvel em dia.</p>
-          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
-        </div></div>
-      </div>
-      <div class="acc-item reveal" data-servico="Unificação e Desmembramento de Lotes">
-        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv5"><span class="acc-num">05</span><span class="acc-name">Unificação e Desmembramento de Lotes</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
-        <div class="acc-panel" id="sv5" role="region"><div>
+        </div>
+        <div class="svc-pane" role="tabpanel" id="pane4" aria-labelledby="tab4" hidden>
+          <figure class="svc-fig"><img src="assets/img/projetos/pedra-arco-fachada-thumb.jpg" alt="Casa de campo com telhado cerâmico e pedra" width="900" height="606" loading="lazy"></figure>
+          <h3>Unificação e Desmembramento de Lotes</h3>
           <p>Projeto e suporte técnico para unir ou dividir terrenos.</p>
-          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
-        </div></div>
-      </div>
-      <div class="acc-item reveal" data-servico="Assessoria e Visitas Técnicas">
-        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv6"><span class="acc-num">06</span><span class="acc-name">Assessoria e Visitas Técnicas</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
-        <div class="acc-panel" id="sv6" role="region"><div>
+        </div>
+        <div class="svc-pane" role="tabpanel" id="pane5" aria-labelledby="tab5" hidden>
+          <figure class="svc-fig"><img src="assets/img/projetos/branca-vista-thumb.jpg" alt="Vista de residência com platibandas brancas" width="900" height="675" loading="lazy"></figure>
+          <h3>Assessoria e Visitas Técnicas</h3>
           <p>Um olhar técnico antes de comprar um imóvel ou para tirar dúvidas de obra, presencial ou online.</p>
-          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
-        </div></div>
-      </div>
-      <div class="acc-item reveal" data-servico="Gerenciamento de Obras">
-        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv7"><span class="acc-num">07</span><span class="acc-name">Gerenciamento de Obras</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
-        <div class="acc-panel" id="sv7" role="region"><div>
+        </div>
+        <div class="svc-pane" role="tabpanel" id="pane6" aria-labelledby="tab6" hidden>
+          <figure class="svc-fig"><img src="assets/img/projetos/contemporanea-fachada-thumb.jpg" alt="Residência contemporânea em lote de esquina" width="900" height="900" loading="lazy"></figure>
+          <h3>Gerenciamento de Obras</h3>
           <p>Planejamento e acompanhamento da obra, para o projeto sair do papel com qualidade e transparência.</p>
-          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
-        </div></div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--wa-s" id="svc-wa" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <button class="btn btn--line" id="svc-brief" type="button">Enviar briefing</button>
+        </div>
       </div>
     </div>
   </div>
@@ -239,10 +240,10 @@ try {
       </div>
     </div>
     <ul class="diffs">
-      <li class="reveal" style="--d:0s"><span class="pillar-n">01</span><h3>Planejamento e cronograma</h3><p>Etapas organizadas e acompanhadas, para você saber o que acontece em cada fase.</p></li>
-      <li class="reveal" style="--d:.08s"><span class="pillar-n">02</span><h3>Orçamento e controle de custos</h3><p>Acompanhamento dos gastos e comparação de propostas.</p></li>
-      <li class="reveal" style="--d:.16s"><span class="pillar-n">03</span><h3>Gestão de fornecedores e equipes</h3><p>Coordenação de profissionais e materiais, cada etapa na hora certa.</p></li>
-      <li class="reveal" style="--d:.24s"><span class="pillar-n">04</span><h3>Relatórios e fotos</h3><p>Registros periódicos para ver a obra evoluir, mesmo à distância.</p></li>
+      <li class="reveal" style="--d:0s"><span class="pillar-n" aria-hidden="true"></span><h3>Planejamento e cronograma</h3><p>Etapas organizadas e acompanhadas, para você saber o que acontece em cada fase.</p></li>
+      <li class="reveal" style="--d:.08s"><span class="pillar-n" aria-hidden="true"></span><h3>Orçamento e controle de custos</h3><p>Acompanhamento dos gastos e comparação de propostas.</p></li>
+      <li class="reveal" style="--d:.16s"><span class="pillar-n" aria-hidden="true"></span><h3>Gestão de fornecedores e equipes</h3><p>Coordenação de profissionais e materiais, cada etapa na hora certa.</p></li>
+      <li class="reveal" style="--d:.24s"><span class="pillar-n" aria-hidden="true"></span><h3>Relatórios e fotos</h3><p>Registros periódicos para ver a obra evoluir, mesmo à distância.</p></li>
     </ul>
     <div class="center reveal"><button class="btn btn--terra" type="button" data-brief="Gerenciamento de Obras">Quero gerenciar minha obra</button></div>
   </div>

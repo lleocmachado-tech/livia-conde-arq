@@ -132,14 +132,29 @@
     });
   });
 
-  /* ---------- Serviços: botões ---------- */
-  $$('.acc-item[data-servico]').forEach(function (item) {
-    var nome = item.getAttribute('data-servico');
-    var wa = $('[data-wa-servico]', item);
-    wa.href = waUrl('Olá, Lívia! Vim pelo site e tenho interesse em: ' + nome + '. Gostaria de conversar sobre o meu projeto.');
-    wa.target = '_blank'; wa.rel = 'noopener';
-    $('[data-brief]', item).addEventListener('click', function () { goBriefing(nome); });
+  /* ---------- Serviços: abas ---------- */
+  var tabs = $$('.svc-tab'), panes = $$('.svc-pane'), svcWa = $('#svc-wa'), curSvc = '';
+  function pickService(i, user) {
+    tabs.forEach(function (t, k) {
+      var on = k === i;
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; panes[k].hidden = !on;
+    });
+    curSvc = tabs[i].getAttribute('data-servico');
+    svcWa.href = waUrl('Olá, Lívia! Vim pelo site e tenho interesse em: ' + curSvc + '. Gostaria de conversar sobre o meu projeto.');
+    if (user) tabs[i].scrollIntoView({ inline: 'center', block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { pickService(i, true); });
+    t.addEventListener('keydown', function (e) {
+      var d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (!d) return;
+      e.preventDefault();
+      var n = (i + d + tabs.length) % tabs.length;
+      pickService(n, true); tabs[n].focus();
+    });
   });
+  $('#svc-brief').addEventListener('click', function () { goBriefing(curSvc); });
+  pickService(0);
   $$('[data-brief]').forEach(function (b) {
     var v = b.getAttribute('data-brief');
     if (v) b.addEventListener('click', function () { goBriefing(v); });
