@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* classe "js" + decide se a intro roda (1x por sessão, sem reduced-motion, nunca em link direto de projeto) */
+document.documentElement.className = 'js';
+try {
+  if (!sessionStorage.getItem('lc-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches && !/^#projeto\//.test(location.hash)) {
+    document.documentElement.className += ' has-intro';
+  }
+} catch (e) {}
+</script>
+<title>Lívia Conde Arquitetura — Arquitetura, Interiores e Gerenciamento de Obras</title>
+<meta name="description" content="Arquitetura com propósito, personalizada, que conecta, inspira e acolhe. Projetos residenciais e comerciais, interiores, regularização e gerenciamento de obras, com atendimento em todo o Brasil.">
+<meta name="theme-color" content="#15304B">
+<link rel="icon" type="image/png" href="assets/logo/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+<link rel="canonical" href="https://liviaconde.netlify.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Lívia Conde Arquitetura">
+<meta property="og:title" content="Lívia Conde Arquitetura — Arquitetura que acolhe, do seu jeito">
+<meta property="og:description" content="Projetos de arquitetura, interiores e gerenciamento de obras para todo o Brasil — presencial e online.">
+<meta property="og:url" content="https://liviaconde.netlify.app/">
+<meta property="og:image" content="https://liviaconde.netlify.app/assets/img/projetos/entardecer-fachada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/projetos/entardecer-fachada.jpg">
+<link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json" id="ld-negocio">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Lívia Conde Arquitetura",
+  "description": "Arquitetura residencial e comercial, design de interiores, regularização de imóveis e gerenciamento de obras.",
+  "url": "https://liviaconde.netlify.app/",
+  "logo": "https://liviaconde.netlify.app/assets/logo/logo-arq-cor.png",
+  "image": "https://liviaconde.netlify.app/assets/img/projetos/entardecer-fachada.jpg",
+  "areaServed": { "@type": "Country", "name": "Brasil" },
+  "knowsAbout": ["Arquitetura residencial", "Arquitetura comercial", "Design de interiores", "Regularização de imóveis", "Gerenciamento de obras"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Como funciona o atendimento online?", "acceptedAnswer": { "@type": "Answer", "text": "Toda a conversa acontece por videochamada, WhatsApp e e-mail: você conta sobre o projeto, envia fotos, plantas e referências, e acompanha cada etapa a distância. Quando necessário, combinamos visitas técnicas ou apoio de profissionais locais." } },
+    { "@type": "Question", "name": "Vocês atendem todo o Brasil?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O atendimento é nacional, presencial e online. Conforme o serviço e a localização do imóvel, definimos juntos a melhor forma de acompanhamento." } },
+    { "@type": "Question", "name": "Qual é o prazo de um projeto?", "acceptedAnswer": { "@type": "Answer", "text": "O prazo depende do tipo de projeto, do tamanho e do escopo. Ele é definido na proposta, depois que entendemos a sua necessidade." } },
+    { "@type": "Question", "name": "Preciso ter um terreno para começar?", "acceptedAnswer": { "@type": "Answer", "text": "Não necessariamente. Podemos iniciar com um terreno já escolhido, com um imóvel existente ou, se preferir, orientar você na análise de um terreno antes da compra." } },
+    { "@type": "Question", "name": "Vocês acompanham a obra?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Além do projeto, oferecemos assessoria, visitas técnicas e o serviço de Gerenciamento de Obras, para que a execução siga fielmente o que foi planejado." } },
+    { "@type": "Question", "name": "Como é definido o valor do projeto?", "acceptedAnswer": { "@type": "Answer", "text": "Os valores são apresentados em uma proposta personalizada, de acordo com o escopo, a metragem e as etapas contratadas. Não trabalhamos com valores fechados sem antes conhecer o seu projeto." } },
+    { "@type": "Question", "name": "O que preciso para começar?", "acceptedAnswer": { "@type": "Answer", "text": "Basta preencher o briefing ou chamar no WhatsApp. Se tiver, envie fotos do local, planta, documentos do imóvel e referências do que você gosta. Se ainda não tiver nada, tudo bem: começamos pela conversa." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- Forma da onda reutilizada nos divisores -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="wave-shape" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path style="fill:var(--back)" d="M0,52 C220,102 470,18 740,60 C1000,98 1220,28 1440,60 L1440,120 L0,120 Z"/>
+    <path style="fill:var(--front)" d="M0,82 C200,32 430,118 720,76 C1020,32 1240,114 1440,70 L1440,120 L0,120 Z"/>
+  </symbol>
+</svg>
+
+<!-- Intro de abertura -->
+<div id="intro" aria-hidden="true">
+  <div class="intro-mono">
+    <img class="intro-L" src="assets/logo/mono-L.png" alt="" width="600" height="674">
+    <img class="intro-C" src="assets/logo/mono-C.png" alt="" width="600" height="674">
+  </div>
+</div>
+
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="header-in">
+    <a class="brand" href="#topo" aria-label="Lívia Conde Arquitetura — início">
+      <img class="brand-w" src="assets/logo/logo-arq-branco.png" alt="Lívia Conde Arquitetura" width="900" height="429">
+      <img class="brand-c" src="assets/logo/logo-arq-cor.png" alt="" width="900" height="429">
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#essencia">Essência</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#obras">Obras</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#processo">Processo</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn--nav" href="#briefing">Solicitar orçamento</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- Hero -->
+<section class="hero" id="topo" aria-labelledby="hero-titulo">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide active"><img src="assets/img/projetos/entardecer-fachada.jpg" alt="" width="2000" height="1116" fetchpriority="high"></div>
+    <div class="hero-slide"><img src="assets/img/projetos/pedra-arco-fachada.jpg" alt="" width="2000" height="1347"></div>
+    <div class="hero-slide"><img src="assets/img/projetos/contemporanea-fachada.jpg" alt="" width="1254" height="1254"></div>
+  </div>
+  <div class="hero-shade"></div>
+  <div class="wrap hero-content">
+    <p class="eyebrow eyebrow--light hero-a">Arquitetura · Interiores · Gerenciamento de Obras</p>
+    <h1 id="hero-titulo" class="hero-a">Arquitetura que <em>acolhe</em>,<br>do seu jeito.</h1>
+    <p class="hero-sub hero-a">Projetos pensados para quem busca beleza, conforto e funcionalidade, com atendimento em todo o Brasil — presencial e online.</p>
+    <div class="btn-row hero-a">
+      <a class="btn btn--terra" href="#briefing">Solicitar orçamento</a>
+      <a class="btn btn--ghost" href="#portfolio">Ver projetos</a>
+    </div>
+  </div>
+  <a class="scroll-ind" href="#essencia" aria-label="Rolar para a próxima seção"><span>Role</span><i></i></a>
+  <svg class="wave wave--hero" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><use href="#wave-shape"/></svg>
+</section>
+
+<!-- Essência -->
+<section class="section essence" id="essencia" aria-labelledby="essencia-titulo">
+  <svg class="curve" viewBox="0 0 1440 1000" preserveAspectRatio="none" aria-hidden="true"><path id="curve-path" vector-effect="non-scaling-stroke" d="M-20,80 C260,-20 420,360 740,330 S1180,200 1280,520 S1180,860 1470,940"/></svg>
+  <div class="wrap">
+    <div class="essence-top">
+      <div class="essence-text">
+        <p class="eyebrow reveal">Quem somos</p>
+        <h2 id="essencia-titulo" class="reveal"><span class="script">Nossa essência</span><br>Arquitetura com <em>propósito</em></h2>
+        <p class="lead reveal">Arquitetura personalizada, que conecta, inspira e acolhe.</p>
+        <p class="reveal">Um projeto nasce de uma ideia, que se transforma em espaço, através de um olhar atento, sensível e técnico. Cada casa, cada ambiente e cada detalhe parte de uma conversa: ouvir como você vive para desenhar um lugar que seja, de verdade, seu.</p>
+        <p class="reveal">Do seu gosto... do jeito que você sempre sonhou!</p>
+      </div>
+      <figure class="essence-img reveal">
+        <img data-parallax src="assets/img/projetos/living-tropical.jpg" alt="Living com pé-direito duplo, forro de madeira e papel de parede botânico" width="1115" height="2000" loading="lazy">
+      </figure>
+    </div>
+
+    <ol class="pillars">
+      <li class="reveal" style="--d:0s"><span class="pillar-n">01</span><h3>Design atemporal</h3><p>Soluções que atravessam modismos e continuam bonitas com o passar dos anos.</p></li>
+      <li class="reveal" style="--d:.08s"><span class="pillar-n">02</span><h3>Funcionalidade</h3><p>Cada metro pensado para o uso real, com fluxos claros e rotina facilitada.</p></li>
+      <li class="reveal" style="--d:.16s"><span class="pillar-n">03</span><h3>Bem-estar</h3><p>Luz, ventilação, conforto e acolhimento para que a casa cuide de quem vive nela.</p></li>
+      <li class="reveal" style="--d:.24s"><span class="pillar-n">04</span><h3>Personalidade</h3><p>Projetos que refletem quem você é, e não uma fórmula pronta.</p></li>
+      <li class="reveal" style="--d:.32s"><span class="pillar-n">05</span><h3>Beleza</h3><p>Proporção, materiais e detalhes que encantam no primeiro olhar e no dia a dia.</p></li>
+    </ol>
+
+    <div class="about">
+      <div class="about-photo reveal" role="img" aria-label="Espaço reservado para a foto da Lívia">
+        <span>Foto da Lívia</span>
+      </div>
+      <div class="about-text reveal">
+        <p class="eyebrow">Sobre a Lívia</p>
+        <h3 class="h3-serif">Quem está por trás de cada <em>traço</em></h3>
+        <p class="bio-marker">BIO</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Serviços -->
+<section class="section section--white" id="servicos" aria-labelledby="servicos-titulo">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow">O que fazemos</p>
+      <h2 id="servicos-titulo">Serviços para cada <em>momento</em> do seu projeto</h2>
+    </header>
+
+    <div class="acc acc--services">
+      <div class="acc-item reveal" data-servico="Projeto Residencial">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv1"><span class="acc-num">01</span><span class="acc-name">Projeto Residencial</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="sv1" role="region"><div>
+          <p>Do primeiro traço ao projeto executivo, casas e apartamentos pensados para o seu jeito de viver, com identidade, conforto e funcionalidade.</p>
+          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
+        </div></div>
+      </div>
+      <div class="acc-item reveal" data-servico="Projeto Comercial">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv2"><span class="acc-num">02</span><span class="acc-name">Projeto Comercial</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="sv2" role="region"><div>
+          <p>Lojas, consultórios, escritórios e demais espaços de trabalho que traduzem a sua marca e funcionam bem no dia a dia, acolhendo quem trabalha e quem visita.</p>
+          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
+        </div></div>
+      </div>
+      <div class="acc-item reveal" data-servico="Design de Interiores">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv3"><span class="acc-num">03</span><span class="acc-name">Design de Interiores</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="sv3" role="region"><div>
+          <p>Ambientes que contam a sua história: layout, materiais, iluminação, mobiliário e detalhes, tudo pensado em conjunto para um resultado harmônico.</p>
+          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
+        </div></div>
+      </div>
+      <div class="acc-item reveal" data-servico="Regularização de Imóveis">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv4"><span class="acc-num">04</span><span class="acc-name">Regularização de Imóveis</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="sv4" role="region"><div>
+          <p>Orientação técnica e elaboração dos projetos necessários para deixar a documentação do seu imóvel em dia, com segurança e tranquilidade.</p>
+          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
+        </div></div>
+      </div>
+      <div class="acc-item reveal" data-servico="Unificação e Desmembramento de Lotes">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv5"><span class="acc-num">05</span><span class="acc-name">Unificação e Desmembramento de Lotes</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="sv5" role="region"><div>
+          <p>Estudo e projeto para unir ou dividir terrenos, com o suporte técnico necessário para encaminhar o processo nos órgãos competentes.</p>
+          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
+        </div></div>
+      </div>
+      <div class="acc-item reveal" data-servico="Assessoria e Visitas Técnicas">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv6"><span class="acc-num">06</span><span class="acc-name">Assessoria e Visitas Técnicas</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="sv6" role="region"><div>
+          <p>Um olhar técnico para avaliar um imóvel antes da compra, esclarecer dúvidas de obra ou orientar decisões importantes, presencialmente ou online.</p>
+          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
+        </div></div>
+      </div>
+      <div class="acc-item reveal" data-servico="Gerenciamento de Obras">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="sv7"><span class="acc-num">07</span><span class="acc-name">Gerenciamento de Obras</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="sv7" role="region"><div>
+          <p>Planejamento, acompanhamento e controle da execução para que o projeto saia do papel com qualidade, organização e transparência.</p>
+          <div class="btn-row"><a class="btn btn--wa-s" data-wa-servico>Falar no WhatsApp</a><button class="btn btn--line" type="button" data-brief>Enviar briefing</button></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gerenciamento de Obras -->
+<div class="wave-box wave-box--in" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
+<section class="section section--navy obras" id="obras" aria-labelledby="obras-titulo">
+  <div class="wrap">
+    <div class="obras-head reveal">
+      <img src="assets/logo/logo-gdo-branco.png" alt="Lívia Conde Gerenciamento de Obras" width="900" height="427" loading="lazy">
+      <div>
+        <p class="eyebrow eyebrow--light">Uma frente própria da marca</p>
+        <h2 id="obras-titulo">A obra no <em>prazo</em> do que foi sonhado</h2>
+        <p class="lead-l">Quem projeta conhece cada detalhe. Por isso o Gerenciamento de Obras garante que o que foi desenhado seja construído com cuidado, organização e clareza do início ao fim.</p>
+      </div>
+    </div>
+    <ul class="diffs">
+      <li class="reveal" style="--d:0s"><span class="pillar-n">01</span><h3>Planejamento e cronograma</h3><p>Etapas organizadas e acompanhadas para que você saiba o que acontece em cada fase da obra.</p></li>
+      <li class="reveal" style="--d:.08s"><span class="pillar-n">02</span><h3>Orçamento e controle de custos</h3><p>Acompanhamento dos gastos e comparação de propostas para decisões mais seguras.</p></li>
+      <li class="reveal" style="--d:.16s"><span class="pillar-n">03</span><h3>Gestão de fornecedores e equipes</h3><p>Coordenação de profissionais e materiais para que cada etapa aconteça no momento certo.</p></li>
+      <li class="reveal" style="--d:.24s"><span class="pillar-n">04</span><h3>Relatórios e fotos</h3><p>Acompanhamento transparente, com registros periódicos para você ver a obra evoluir, mesmo à distância.</p></li>
+    </ul>
+    <div class="center reveal"><button class="btn btn--terra" type="button" data-brief="Gerenciamento de Obras">Quero gerenciar minha obra</button></div>
+  </div>
+</section>
+<div class="wave-box wave-box--out" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
+
+<!-- Portfólio -->
+<section class="section portfolio" id="portfolio" aria-labelledby="portfolio-titulo">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow">Portfólio</p>
+      <h2 id="portfolio-titulo">Projetos que <em>acolhem</em> histórias</h2>
+    </header>
+    <div class="filters reveal" id="filters" role="group" aria-label="Filtrar projetos por categoria"></div>
+    <ul class="grid" id="grid"></ul>
+  </div>
+</section>
+
+<!-- Processo -->
+<section class="section section--white process" id="processo" aria-labelledby="processo-titulo">
+  <div class="wrap process-grid">
+    <header class="sec-head process-head reveal">
+      <p class="eyebrow">Como trabalhamos</p>
+      <h2 id="processo-titulo">Um caminho <em>claro</em>, do primeiro papo à chave na mão</h2>
+      <p>Cada etapa é conversada e aprovada com você, para que ninguém seja surpreendido.</p>
+    </header>
+    <ol class="timeline" id="timeline">
+      <li class="reveal"><span class="t-dot"></span><span class="t-n">01</span><h3>Conversa inicial</h3><p>Um primeiro contato para entender o seu momento, o que você sonha e o que precisa.</p></li>
+      <li class="reveal"><span class="t-dot"></span><span class="t-n">02</span><h3>Briefing e proposta</h3><p>Com o briefing em mãos, apresentamos a proposta com escopo, etapas e condições.</p></li>
+      <li class="reveal"><span class="t-dot"></span><span class="t-n">03</span><h3>Estudo preliminar</h3><p>As primeiras ideias ganham forma: implantação, layout e conceito do projeto.</p></li>
+      <li class="reveal"><span class="t-dot"></span><span class="t-n">04</span><h3>Projeto e renders</h3><p>O projeto se desenvolve e você enxerga o resultado em imagens realistas antes de construir.</p></li>
+      <li class="reveal"><span class="t-dot"></span><span class="t-n">05</span><h3>Executivo e aprovação</h3><p>Detalhamento técnico para obra e encaminhamento das aprovações necessárias.</p></li>
+      <li class="reveal"><span class="t-dot"></span><span class="t-n">06</span><h3>Obra e entrega</h3><p>Acompanhamento da execução, quando contratado, até o momento de viver o espaço.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="duvidas" aria-labelledby="faq-titulo">
+  <div class="wrap faq-wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow">Perguntas frequentes</p>
+      <h2 id="faq-titulo">Ficou com <em>dúvida</em>?</h2>
+    </header>
+    <div class="acc acc--faq">
+      <div class="acc-item reveal">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq1"><span class="acc-name">Como funciona o atendimento online?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="fq1" role="region"><div><p>Toda a conversa acontece por videochamada, WhatsApp e e-mail: você conta sobre o projeto, envia fotos, plantas e referências, e acompanha cada etapa a distância. Quando necessário, combinamos visitas técnicas ou apoio de profissionais locais.</p></div></div>
+      </div>
+      <div class="acc-item reveal">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq2"><span class="acc-name">Vocês atendem todo o Brasil?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="fq2" role="region"><div><p>Sim. O atendimento é nacional, presencial e online. Conforme o serviço e a localização do imóvel, definimos juntos a melhor forma de acompanhamento.</p></div></div>
+      </div>
+      <div class="acc-item reveal">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq3"><span class="acc-name">Qual é o prazo de um projeto?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="fq3" role="region"><div><p>O prazo depende do tipo de projeto, do tamanho e do escopo. Ele é definido na proposta, depois que entendemos a sua necessidade.</p></div></div>
+      </div>
+      <div class="acc-item reveal">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq4"><span class="acc-name">Preciso ter um terreno para começar?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="fq4" role="region"><div><p>Não necessariamente. Podemos iniciar com um terreno já escolhido, com um imóvel existente ou, se preferir, orientar você na análise de um terreno antes da compra.</p></div></div>
+      </div>
+      <div class="acc-item reveal">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq5"><span class="acc-name">Vocês acompanham a obra?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="fq5" role="region"><div><p>Sim. Além do projeto, oferecemos assessoria, visitas técnicas e o serviço de Gerenciamento de Obras, para que a execução siga fielmente o que foi planejado.</p></div></div>
+      </div>
+      <div class="acc-item reveal">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq6"><span class="acc-name">Como é definido o valor do projeto?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="fq6" role="region"><div><p>Os valores são apresentados em uma proposta personalizada, de acordo com o escopo, a metragem e as etapas contratadas. Não trabalhamos com valores fechados sem antes conhecer o seu projeto.</p></div></div>
+      </div>
+      <div class="acc-item reveal">
+        <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq7"><span class="acc-name">O que preciso para começar?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
+        <div class="acc-panel" id="fq7" role="region"><div><p>Basta preencher o briefing ou chamar no WhatsApp. Se tiver, envie fotos do local, planta, documentos do imóvel e referências do que você gosta. Se ainda não tiver nada, tudo bem: começamos pela conversa.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram -->
+<section class="section section--white insta" aria-labelledby="insta-titulo">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="eyebrow">Acompanhe</p>
+      <h2 id="insta-titulo">No Instagram, <em>bastidores</em> e inspirações</h2>
+      <a class="insta-handle" data-ig target="_blank" rel="noopener"><span data-cfg="instagramArroba"></span></a>
+    </header>
+    <ul class="insta-grid" id="insta-grid"></ul>
+  </div>
+</section>
+
+<!-- Briefing -->
+<div class="wave-box wave-box--in wave-box--white" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
+<section class="section section--navy briefing" id="briefing" aria-labelledby="briefing-titulo">
+  <div class="wrap briefing-wrap">
+    <header class="sec-head sec-head--light reveal">
+      <p class="eyebrow eyebrow--light">Briefing</p>
+      <h2 id="briefing-titulo">Vamos conversar sobre o seu <em>projeto</em>?</h2>
+      <p>Conte um pouco sobre o que você imagina. Leva poucos minutos e ajuda a preparar a nossa conversa.</p>
+    </header>
+
+    <div class="form-card reveal">
+      <p class="file-note" id="file-note" hidden>Você está vendo uma cópia local do site: o envio pelo site funciona depois da publicação. O envio pelo WhatsApp funciona sempre.</p>
+
+      <form id="briefing-form" name="briefing" method="POST" action="obrigado.html" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="briefing">
+        <p class="hp" aria-hidden="true"><label>Não preencha este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+        <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+        <p class="progress-label" id="progress-label" aria-live="polite">Etapa 1 de 4</p>
+
+        <!-- Etapa 1 -->
+        <fieldset class="step" data-step="0">
+          <legend>Qual serviço você procura?</legend>
+          <div class="svc-cards">
+            <label class="svc-card"><input type="radio" name="servico" value="Projeto Residencial" required data-msg="Escolha um serviço para continuar."><span>Projeto Residencial</span></label>
+            <label class="svc-card"><input type="radio" name="servico" value="Projeto Comercial"><span>Projeto Comercial</span></label>
+            <label class="svc-card"><input type="radio" name="servico" value="Design de Interiores"><span>Design de Interiores</span></label>
+            <label class="svc-card"><input type="radio" name="servico" value="Regularização de Imóveis"><span>Regularização de Imóveis</span></label>
+            <label class="svc-card"><input type="radio" name="servico" value="Unificação e Desmembramento de Lotes"><span>Unificação e Desmembramento de Lotes</span></label>
+            <label class="svc-card"><input type="radio" name="servico" value="Assessoria e Visitas Técnicas"><span>Assessoria e Visitas Técnicas</span></label>
+            <label class="svc-card"><input type="radio" name="servico" value="Gerenciamento de Obras"><span>Gerenciamento de Obras</span></label>
+          </div>
+          <p class="step-err" role="alert"></p>
+          <div class="step-nav"><span></span><button class="btn btn--terra" type="button" data-next>Continuar</button></div>
+        </fieldset>
+
+        <!-- Etapa 2 -->
+        <fieldset class="step" data-step="1" hidden>
+          <legend>Sobre o projeto</legend>
+          <div class="fields">
+            <label class="field"><span>Tipo de projeto</span>
+              <select name="tipo" required data-msg="Selecione o tipo de projeto.">
+                <option value="">Selecione</option><option>Construção nova</option><option>Reforma</option><option>Ampliação</option><option>Regularização</option><option>Interiores</option><option>Outro</option>
+              </select></label>
+            <label class="field"><span>Cidade / UF</span><input name="cidade_uf" type="text" placeholder="Ex.: Campinas / SP" autocomplete="address-level2" required data-msg="Informe a cidade e o estado."></label>
+            <label class="field"><span>Metragem aproximada (opcional)</span><input name="metragem" type="text" inputmode="numeric" placeholder="Ex.: 180 m²"></label>
+            <label class="field"><span>Situação atual</span>
+              <select name="situacao" required data-msg="Selecione a situação atual.">
+                <option value="">Selecione</option><option>Tenho um terreno</option><option>Tenho um imóvel existente</option><option>Obra em andamento</option><option>Ainda estou buscando o imóvel</option>
+              </select></label>
+            <label class="field field--full"><span>Prazo desejado</span>
+              <select name="prazo" required data-msg="Selecione o prazo desejado.">
+                <option value="">Selecione</option><option>O quanto antes</option><option>Em até 3 meses</option><option>De 3 a 6 meses</option><option>Mais de 6 meses</option><option>Ainda não sei</option>
+              </select></label>
+          </div>
+          <p class="step-err" role="alert"></p>
+          <div class="step-nav"><button class="btn btn--line-l" type="button" data-prev>Voltar</button><button class="btn btn--terra" type="button" data-next>Continuar</button></div>
+        </fieldset>
+
+        <!-- Etapa 3 -->
+        <fieldset class="step" data-step="2" hidden>
+          <legend>Mais detalhes</legend>
+          <div class="fields">
+            <label class="field field--full"><span>Conte um pouco sobre o que você imagina</span><textarea name="mensagem" rows="5" placeholder="Estilo, necessidades da família, referências, dúvidas…"></textarea></label>
+            <label class="field field--full"><span>Anexo (opcional)</span>
+              <input type="file" name="anexo" id="anexo" accept=".pdf,.jpg,.jpeg,.png,.webp">
+              <small>Planta, foto do terreno ou referências. PDF, JPG, PNG ou WEBP, até 8 MB.</small></label>
+          </div>
+          <p class="step-err" role="alert"></p>
+          <div class="step-nav"><button class="btn btn--line-l" type="button" data-prev>Voltar</button><button class="btn btn--terra" type="button" data-next>Continuar</button></div>
+        </fieldset>
+
+        <!-- Etapa 4 -->
+        <fieldset class="step" data-step="3" hidden>
+          <legend>Como podemos falar com você?</legend>
+          <div class="fields">
+            <label class="field"><span>Nome</span><input name="nome" type="text" autocomplete="name" required data-msg="Informe o seu nome."></label>
+            <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required data-msg="Informe um e-mail válido."></label>
+            <label class="field"><span>WhatsApp</span><input name="whatsapp" id="f-whats" type="tel" inputmode="tel" placeholder="(00) 00000-0000" autocomplete="tel-national" required pattern="\(\d{2}\) \d{4,5}-\d{4}" data-msg="Informe o WhatsApp com DDD."></label>
+            <div class="field"><span>Prefere ser contatado por</span>
+              <div class="radios">
+                <label><input type="radio" name="preferencia" value="WhatsApp" checked><span>WhatsApp</span></label>
+                <label><input type="radio" name="preferencia" value="E-mail"><span>E-mail</span></label>
+                <label><input type="radio" name="preferencia" value="Ligação"><span>Ligação</span></label>
+              </div></div>
+            <label class="check field--full"><input type="checkbox" name="aceite_lgpd" value="sim" required data-msg="Para continuar, aceite o uso dos seus dados para o contato."><span>Concordo que meus dados sejam usados para o retorno sobre este projeto, conforme a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label>
+          </div>
+          <p class="step-err" role="alert"></p>
+          <div class="step-nav step-nav--send">
+            <button class="btn btn--line-l" type="button" data-prev>Voltar</button>
+            <button class="btn btn--terra" type="submit" id="send-site">Enviar pelo site</button>
+            <button class="btn btn--wa" type="button" id="send-wa">Enviar pelo WhatsApp</button>
+          </div>
+          <p class="hint">Ao enviar pelo WhatsApp, o resumo do briefing já aparece pronto na conversa. Se você escolheu um anexo, envie-o por lá também.</p>
+        </fieldset>
+      </form>
+
+      <div class="success" id="success" hidden tabindex="-1">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-17"/></svg>
+        <h3>Recebemos o seu briefing!</h3>
+        <p>Obrigada pela confiança. Em breve entraremos em contato pelo canal que você escolheu.</p>
+        <a class="btn btn--line-l" href="#topo">Voltar ao início</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave-box wave-box--out wave-box--out-paper" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
+
+<!-- Contato -->
+<section class="section contact" id="contato" aria-labelledby="contato-titulo">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="eyebrow">Contato</p>
+      <h2 id="contato-titulo">Fale <em>direto</em> com a gente</h2>
+      <p>Atendimento em todo o Brasil — presencial e online.</p>
+    </header>
+    <ul class="contact-grid">
+      <li class="reveal" style="--d:0s"><a data-wa target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path class="f" d="M8.6 7.8c-.3.3-.7 1-.5 1.9.4 1.5 1.7 3.3 3.3 4.3 1.2.8 2.3 1 3 .8.6-.2 1.1-.8 1.2-1.3l-1.9-.9-.8.8c-1-.3-2.2-1.4-2.7-2.4l.7-.8-.8-2c-.4-.1-.9 0-1.5.6z"/></svg>
+        <span class="c-label">WhatsApp</span><span class="c-val" data-cfg="telefoneExibicao"></span></a></li>
+      <li class="reveal" style="--d:.08s"><a data-tel>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+        <span class="c-label">Telefone</span><span class="c-val" data-cfg="telefoneExibicao"></span></a></li>
+      <li class="reveal" style="--d:.16s"><a data-mail>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <span class="c-label">E-mail</span><span class="c-val" data-cfg="email"></span></a></li>
+      <li class="reveal" style="--d:.24s"><a data-ig target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="f" cx="17.2" cy="6.8" r="1"/></svg>
+        <span class="c-label">Instagram</span><span class="c-val" data-cfg="instagramArroba"></span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<!-- Rodapé -->
+<div class="wave-box wave-box--in" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo/mono-branco.png" alt="Monograma LC" width="600" height="674" loading="lazy">
+      <p data-cfg="cau"></p>
+    </div>
+    <nav aria-label="Rodapé">
+      <h2 class="f-title">Navegue</h2>
+      <a href="#essencia">Essência</a><a href="#servicos">Serviços</a><a href="#obras">Obras</a><a href="#portfolio">Portfólio</a><a href="#processo">Processo</a><a href="#briefing">Briefing</a>
+    </nav>
+    <div>
+      <h2 class="f-title">Contato</h2>
+      <a data-wa target="_blank" rel="noopener"><span data-cfg="telefoneExibicao"></span></a>
+      <a data-mail><span data-cfg="email"></span></a>
+      <a data-ig target="_blank" rel="noopener"><span data-cfg="instagramArroba"></span></a>
+      <p class="f-note">Atendimento em todo o Brasil</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="ano"></span> <span data-cfg="nome"></span></span>
+    <a href="privacidade.html">Política de Privacidade</a>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a class="fab" id="fab" data-wa target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path class="f" d="M8.6 7.8c-.3.3-.7 1-.5 1.9.4 1.5 1.7 3.3 3.3 4.3 1.2.8 2.3 1 3 .8.6-.2 1.1-.8 1.2-1.3l-1.9-.9-.8.8c-1-.3-2.2-1.4-2.7-2.4l.7-.8-.8-2c-.4-.1-.9 0-1.5.6z"/></svg>
+</a>
+
+<!-- Visualizador de projetos -->
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="v-title" hidden>
+  <button class="v-close" id="v-close" type="button" aria-label="Fechar projeto">&times;</button>
+  <div class="v-stage-col">
+    <div class="v-stage" id="v-stage">
+      <button class="v-arrow v-prev" id="v-prev" type="button" aria-label="Imagem anterior">&#8249;</button>
+      <img id="v-img" src="" alt="" draggable="false">
+      <button class="v-arrow v-next" id="v-next" type="button" aria-label="Próxima imagem">&#8250;</button>
+      <span class="v-count" id="v-count"></span>
+    </div>
+    <div class="v-thumbs" id="v-thumbs"></div>
+  </div>
+  <aside class="v-info">
+    <p class="eyebrow" id="v-cat"></p>
+    <h2 id="v-title"></h2>
+    <dl class="v-spec" id="v-spec"></dl>
+    <p class="v-text" id="v-text"></p>
+    <div id="v-compare"></div>
+    <a class="btn btn--terra" id="v-cta" target="_blank" rel="noopener">Quero um projeto assim</a>
+  </aside>
+</div>
+
+<script src="js/config.js"></script>
+<script src="data/projetos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
