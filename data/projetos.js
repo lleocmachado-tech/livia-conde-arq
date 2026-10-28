@@ -21,98 +21,207 @@
    foco       → (opcional) parte da foto que aparece no card, ex.: "50% 30%"
                 (horizontal vertical). Útil para fotos em pé.
 
-   ⚠ Nomes, locais e textos abaixo são PROVISÓRIOS
-     (imagens retiradas do portfólio em PDF).
+   Fotos vindas da pasta "Site e Portfólio LC" (Drive). Local, ano e área
+     ficam vazios por enquanto: preencha quando quiser que apareçam.
    ========================================================= */
 window.PROJETOS = [
   {
-    id: "residencia-entardecer",
-    titulo: "Residência Entardecer",
+    id: "residencia-flor-daldeia",
+    titulo: "Residência Flor D'Aldeia",
     categoria: "Residencial",
-    local: "A definir",
-    ano: "2026",
+    local: "",
+    ano: "",
     area: "",
     etapa: "Projeto",
-    resumo: "Volumes puros, pedra natural e madeira compõem uma fachada contemporânea e acolhedora. Rasgos de luz linear desenham a arquitetura ao cair da tarde.",
-    capa: "assets/img/projetos/entardecer-fachada-thumb.jpg",
+    resumo: "Volumes em desnível, madeira e pedra compõem uma fachada contemporânea e acolhedora, vista ao entardecer.",
+    capa: "assets/img/projetos/flor-daldeia-1-thumb.jpg",
     fotos: [
-      "assets/img/projetos/entardecer-fachada.jpg",
-      "assets/img/projetos/entardecer-entrada.jpg"
+      "assets/img/projetos/flor-daldeia-1.jpg",
+      "assets/img/projetos/flor-daldeia-2.jpg",
+      "assets/img/projetos/flor-daldeia-3.jpg"
     ],
     comparar: null,
     destaque: true
   },
   {
-    id: "residencia-pedra-arco",
-    titulo: "Residência Pedra & Arco",
+    id: "casa-de-campo",
+    titulo: "Casa de Campo",
     categoria: "Residencial",
-    local: "A definir",
-    ano: "2026",
+    local: "",
+    ano: "",
     area: "",
     etapa: "Projeto",
-    resumo: "Telhado cerâmico, pedra e uma porta de madeira de demolição: uma casa de campo com alma afetiva e detalhes que contam história.",
-    capa: "assets/img/projetos/pedra-arco-fachada-thumb.jpg",
-    fotos: ["assets/img/projetos/pedra-arco-fachada.jpg"],
+    resumo: "Tijolo aparente, telhado cerâmico e deck de madeira junto a um lago ornamental: uma casa para desacelerar.",
+    capa: "assets/img/projetos/casa-campo-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/casa-campo-1.jpg",
+      "assets/img/projetos/casa-campo-2.jpg"
+    ],
+    foco: "50% 40%",
     comparar: null,
     destaque: false
   },
   {
-    id: "living-tropical",
-    titulo: "Living Tropical",
-    categoria: "Interiores",
-    local: "A definir",
-    ano: "2026",
-    area: "",
-    etapa: "Projeto",
-    resumo: "Pé-direito duplo, forro de madeira e papel de parede botânico criam um living sereno, banhado por luz natural filtrada.",
-    capa: "assets/img/projetos/living-tropical-thumb.jpg",
-    fotos: ["assets/img/projetos/living-tropical.jpg"],
-    foco: "50% 35%",
-    comparar: null,
-    destaque: false
-  },
-  {
-    id: "residencia-noturna",
-    titulo: "Residência Varanda de Pedra",
+    id: "chacara-cs",
+    titulo: "Chácara CS",
     categoria: "Residencial",
-    local: "A definir",
-    ano: "2026",
+    local: "",
+    ano: "",
     area: "",
     etapa: "Projeto",
-    resumo: "Grandes panos de vidro integram a área social à varanda. À noite, a pedra rústica e a iluminação cênica transformam a casa em abrigo.",
-    capa: "assets/img/projetos/noturna-fachada-thumb.jpg",
-    fotos: ["assets/img/projetos/noturna-fachada.jpg"],
+    resumo: "Pedra, madeira e grandes panos de vidro abrem a chácara para o jardim. À noite, a iluminação cênica ganha destaque.",
+    capa: "assets/img/projetos/chacara-cs-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/chacara-cs-1.jpg",
+      "assets/img/projetos/chacara-cs-2.jpg",
+      "assets/img/projetos/chacara-cs-3.jpg",
+      "assets/img/projetos/chacara-cs-4.jpg"
+    ],
     foco: "50% 45%",
     comparar: null,
     destaque: false
   },
   {
-    id: "residencia-contemporanea",
-    titulo: "Residência Contemporânea",
+    id: "residencia-lago-azul",
+    titulo: "Residência do Lago Azul",
     categoria: "Residencial",
-    local: "A definir",
-    ano: "2026",
+    local: "",
+    ano: "",
     area: "",
     etapa: "Projeto",
-    resumo: "Lote de esquina resolvido com volumes escuros, ripado de madeira e pedra vulcânica, equilibrando privacidade e presença.",
-    capa: "assets/img/projetos/contemporanea-fachada-thumb.jpg",
-    fotos: ["assets/img/projetos/contemporanea-fachada.jpg"],
+    resumo: "Volumes brancos e pedra, varanda ampla com deck e paisagismo tropical em volta.",
+    capa: "assets/img/projetos/lago-azul-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/lago-azul-1.jpg",
+      "assets/img/projetos/lago-azul-2.jpg"
+    ],
     comparar: null,
     destaque: true
   },
   {
-    id: "residencia-branca",
-    titulo: "Residência Linhas Brancas",
+    id: "residencia-explorar",
+    titulo: "Residência Explorar",
     categoria: "Residencial",
-    local: "A definir",
-    ano: "2026",
+    local: "",
+    ano: "",
     area: "",
     etapa: "Projeto",
-    resumo: "Platibandas brancas em balanço e filetes de luz criam uma fachada leve, com pedra e ripado trazendo textura ao conjunto.",
-    capa: "assets/img/projetos/branca-fachada-thumb.jpg",
+    resumo: "Vidro, pedra e pé-direito generoso integram a casa ao quintal, com rede para o fim de tarde.",
+    capa: "assets/img/projetos/explorar-1-thumb.jpg",
     fotos: [
-      "assets/img/projetos/branca-fachada.jpg",
-      "assets/img/projetos/branca-vista.jpg"
+      "assets/img/projetos/explorar-1.jpg",
+      "assets/img/projetos/explorar-2.jpg",
+      "assets/img/projetos/explorar-3.jpg"
+    ],
+    foco: "50% 65%",
+    comparar: null,
+    destaque: false
+  },
+  {
+    id: "residencia-refugio",
+    titulo: "Residência Refúgio",
+    categoria: "Residencial",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Telhado cerâmico, pedra e portas de madeira trabalhada: uma casa com alma afetiva e muitos detalhes.",
+    capa: "assets/img/projetos/refugio-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/refugio-1.jpg",
+      "assets/img/projetos/refugio-2.jpg",
+      "assets/img/projetos/refugio-3.jpg"
+    ],
+    foco: "50% 40%",
+    comparar: null,
+    destaque: false
+  },
+  {
+    id: "restaurantes",
+    titulo: "Restaurantes",
+    categoria: "Comercial",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Restaurantes, bistrôs e padarias, cada um com identidade própria na fachada e no salão.",
+    capa: "assets/img/projetos/restaurantes-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/restaurantes-1.jpg",
+      "assets/img/projetos/restaurantes-2.jpg",
+      "assets/img/projetos/restaurantes-3.jpg",
+      "assets/img/projetos/restaurantes-4.jpg",
+      "assets/img/projetos/restaurantes-5.jpg"
+    ],
+    comparar: null,
+    destaque: true
+  },
+  {
+    id: "residencia-formas",
+    titulo: "Residência Formas",
+    categoria: "Residencial",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Linhas retas, platibandas e palmeiras para uma fachada moderna e limpa.",
+    capa: "assets/img/projetos/formas-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/formas-1.jpg",
+      "assets/img/projetos/formas-2.jpg",
+      "assets/img/projetos/formas-3.jpg"
+    ],
+    comparar: null,
+    destaque: false
+  },
+  {
+    id: "escritorio-grupo-boticario",
+    titulo: "Escritório Grupo Boticário",
+    categoria: "Interiores",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Escritório de revenda com sala de treinamento e cores vivas, pensado para acolher a equipe.",
+    capa: "assets/img/projetos/boticario-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/boticario-1.jpg",
+      "assets/img/projetos/boticario-2.jpg",
+      "assets/img/projetos/boticario-3.jpg"
+    ],
+    foco: "50% 40%",
+    comparar: null,
+    destaque: false
+  },
+  {
+    id: "d3-motors",
+    titulo: "D3 Motors",
+    categoria: "Comercial",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Espaços comerciais com iluminação marcante e identidade forte.",
+    capa: "assets/img/projetos/d3-motors-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/d3-motors-1.jpg",
+      "assets/img/projetos/d3-motors-2.jpg"
+    ],
+    comparar: null,
+    destaque: false
+  },
+  {
+    id: "instituto-medico-casagrande",
+    titulo: "Instituto Médico Casagrande",
+    categoria: "Comercial",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Recepção em tons neutros, madeira e vegetação, para um atendimento acolhedor.",
+    capa: "assets/img/projetos/imc-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/imc-1.jpg"
     ],
     comparar: null,
     destaque: false

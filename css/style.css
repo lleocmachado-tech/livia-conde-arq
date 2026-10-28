@@ -497,3 +497,11 @@ html:not(.js) .hero-a { opacity: 1; transform: none; }
   .svc-tab[aria-selected="true"]::before { width: 28px; }
   .svc-stage { position: sticky; top: 110px; }
 }
+
+/* ---------- Equipe ---------- */
+.team { display: grid; gap: clamp(24px, 5vw, 72px); align-items: center; margin-top: clamp(64px, 9vw, 120px); }
+.team-text { max-width: 46ch; }
+.team-text .h3-serif { margin-bottom: 1rem; font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.team-photo { overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 4 / 5; max-width: 460px; width: 100%; background: var(--navy); box-shadow: 0 30px 60px -30px rgba(21, 48, 75, .45); }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+@media (min-width: 800px) { .team { grid-template-columns: 1fr auto; } .team-photo { justify-self: end; } }
