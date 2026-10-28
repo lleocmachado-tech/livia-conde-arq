@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /obrigado.html
+
+# Troque o domínio quando tiver o definitivo
+Sitemap: https://liviaconde.netlify.app/sitemap.xml
