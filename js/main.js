@@ -296,8 +296,6 @@
   /* ---------- Briefing ---------- */
   var F = $('#briefing-form'), steps = $$('.step', F), step = 0;
   var bar = $('#progress-bar'), label = $('#progress-label');
-  var isFile = location.protocol === 'file:';
-  if (isFile) $('#file-note').hidden = false;
 
   function showStep(n, focus) {
     step = n;
@@ -347,16 +345,6 @@
     e.target.value = v;
   });
 
-  // anexo: tamanho e tipo
-  $('#anexo').addEventListener('change', function (e) {
-    var f = e.target.files[0], msg = '';
-    if (f) {
-      if (!/\.(pdf|jpe?g|png|webp)$/i.test(f.name)) msg = 'Formato não aceito. Envie PDF, JPG, PNG ou WEBP.';
-      else if (f.size > 8 * 1024 * 1024) msg = 'O arquivo passa de 8 MB. Escolha um menor.';
-    }
-    if (msg) { e.target.value = ''; $('.step-err', steps[2]).textContent = msg; }
-  });
-
   function value(name) { var el = F.elements[name]; return el ? (el.value || '').trim() : ''; }
 
   $('#send-wa').addEventListener('click', function () {
@@ -371,7 +359,6 @@
       value('mensagem') ? '*Detalhes:* ' + value('mensagem') : null,
       '', '*Nome:* ' + value('nome'), '*E-mail:* ' + value('email'), '*WhatsApp:* ' + value('whatsapp'),
       '*Prefere contato por:* ' + (F.querySelector('[name=preferencia]:checked') || {}).value];
-    if ($('#anexo').files[0]) linhas.push('', '(Tenho um anexo para enviar por aqui.)');
     window.open(waUrl(linhas.filter(function (l) { return l !== null; }).join('\n')), '_blank', 'noopener');
   });
 
@@ -379,12 +366,14 @@
     e.preventDefault();
     if (!validate(step)) return;
     var err = $('.step-err', steps[step]), btn = $('#send-site');
-    if (isFile) { err.textContent = 'O envio pelo site só funciona depois da publicação. Use "Enviar pelo WhatsApp".'; return; }
+    if (!S.formKey) { err.textContent = 'O envio pelo site ainda não está configurado. Use "Enviar pelo WhatsApp".'; return; }
+    $('#f-key').value = S.formKey;
     btn.disabled = true; btn.textContent = 'Enviando…';
-    fetch('/', { method: 'POST', body: new FormData(F) })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); })
+    fetch(F.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(F) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (!j.success) throw new Error(j.message); })
       .then(function () {
-        F.hidden = true; $('#file-note').hidden = true;
+        F.hidden = true;
         var ok = $('#success'); ok.hidden = false; ok.focus();
         $('.form-card').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
       })

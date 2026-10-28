@@ -21,6 +21,10 @@ window.SITE = {
   // Registro profissional exibido no rodapé
   cau: "CAU A000000-0",
 
+  // Chave do Web3Forms (formulário de briefing). Crie grátis em web3forms.com
+  // informando o e-mail que vai receber os briefings. Vazio = envio pelo site desativado.
+  formKey: "",
+
   // Mensagem padrão do botão flutuante de WhatsApp
   mensagemPadrao: "Olá, Lívia! Vim pelo site e gostaria de conversar sobre um projeto."
 };

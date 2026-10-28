@@ -16,9 +16,10 @@
 - [ ] Texto da Política de Privacidade (provisório): prazo de retenção, razão social/CNPJ se houver
 
 ## Publicação
-- [ ] Domínio próprio: trocar `liviaconde.netlify.app` em `index.html`, `robots.txt`, `sitemap.xml`
+- [ ] Domínio próprio: trocar `liviaconde.vercel.app` em `index.html`, `robots.txt`, `sitemap.xml`
 - [ ] Imagem de compartilhamento (Open Graph): hoje usa `entardecer-fachada.jpg`; ideal 1200×630
-- [ ] Conferir recebimento de mensagens do Netlify Forms após o 1º deploy (e configurar notificação por e-mail)
+- [ ] Criar a chave do Web3Forms e colocar em `formKey` (`js/config.js`); testar um envio real após o deploy
+- [ ] Backend próprio (fase futura): permitir anexo no formulário e guardar briefings
 - [ ] Rodar Lighthouse no site publicado (meta mobile ≥ 90)
 - [ ] Analítica: desligada; ativar só com aviso de cookies
 

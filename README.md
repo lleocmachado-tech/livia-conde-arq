@@ -1,11 +1,11 @@
 # Site Lívia Conde Arquitetura
 
-Site estático (HTML + CSS + JavaScript puro). Abre com duplo clique em `index.html`. Hospedagem prevista: Netlify.
+Site estático (HTML + CSS + JavaScript puro). Abre com duplo clique em `index.html`. Hospedagem: Vercel. Formulário: Web3Forms.
 
 ## Estrutura
 
 ```
-index.html · privacidade.html · obrigado.html
+index.html · privacidade.html
 css/style.css        → cores, fontes e layout (tokens no topo, em :root)
 js/config.js         → CONTATOS (edite aqui)
 js/main.js           → comportamento do site
@@ -44,10 +44,11 @@ Os textos estão em `index.html` (procure por um trecho do texto com Ctrl+F). Os
 - Se mudar o nome de um serviço, mude também na lista de serviços do formulário (etapa 1), pois o nome precisa ser igual.
 - **Biografia da Lívia:** procure `BIO` em `index.html` (dentro de `class="bio-marker"`) e troque pelo texto. A foto: troque o bloco `about-photo` por `<img src="assets/img/lívia.jpg" alt="Lívia Conde">`.
 
-## Publicar no Netlify
-1. Publique a pasta `prototipo/` pelo GitHub Desktop e conecte o repositório ao Netlify (*Add new site → Import from Git*; deixe *Build command* vazio e *Publish directory* como `prototipo` se o repositório for a pasta acima, ou `.` se for a própria pasta).
-2. O formulário `briefing` é detectado automaticamente no primeiro deploy. Veja as mensagens em *Forms* no painel.
-3. Com o domínio definido, troque `liviaconde.netlify.app` em `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` e `sitemap.xml`.
+## Publicar na Vercel
+1. Suba as alterações pelo GitHub Desktop (*Commit* e *Push*).
+2. Na Vercel: *Add New → Project*, escolha o repositório `livia-conde-arq`, deixe *Framework Preset* em **Other** e *Build Command* / *Output Directory* vazios. Clique em *Deploy*. Cada novo push publica sozinho.
+3. **Formulário de briefing:** crie uma chave grátis em [web3forms.com](https://web3forms.com) (informe o e-mail que receberá os briefings) e cole em `formKey` no `js/config.js`. Enquanto estiver vazia, só o envio pelo WhatsApp funciona. O plano grátis não aceita anexos; o formulário pede que a pessoa mande planta/fotos pelo WhatsApp.
+4. Com o domínio definido, troque `liviaconde.vercel.app` em `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` e `sitemap.xml`.
 
 ## Analítica
 Nenhuma ferramenta de rastreamento está ativa (LGPD). Se for usar, adicione antes um aviso de cookies.

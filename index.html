@@ -17,15 +17,15 @@ try {
 <meta name="theme-color" content="#15304B">
 <link rel="icon" type="image/png" href="assets/logo/favicon.png">
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
-<link rel="canonical" href="https://liviaconde.netlify.app/">
+<link rel="canonical" href="https://liviaconde.vercel.app/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Lívia Conde Arquitetura">
 <meta property="og:title" content="Lívia Conde Arquitetura — Arquitetura que acolhe, do seu jeito">
 <meta property="og:description" content="Projetos de arquitetura, interiores e gerenciamento de obras para todo o Brasil — presencial e online.">
-<meta property="og:url" content="https://liviaconde.netlify.app/">
-<meta property="og:image" content="https://liviaconde.netlify.app/assets/img/projetos/entardecer-fachada.jpg">
+<meta property="og:url" content="https://liviaconde.vercel.app/">
+<meta property="og:image" content="https://liviaconde.vercel.app/assets/img/projetos/entardecer-fachada.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,9 +40,9 @@ try {
   "@type": "ProfessionalService",
   "name": "Lívia Conde Arquitetura",
   "description": "Arquitetura residencial e comercial, design de interiores, regularização de imóveis e gerenciamento de obras.",
-  "url": "https://liviaconde.netlify.app/",
-  "logo": "https://liviaconde.netlify.app/assets/logo/logo-arq-cor.png",
-  "image": "https://liviaconde.netlify.app/assets/img/projetos/entardecer-fachada.jpg",
+  "url": "https://liviaconde.vercel.app/",
+  "logo": "https://liviaconde.vercel.app/assets/logo/logo-arq-cor.png",
+  "image": "https://liviaconde.vercel.app/assets/img/projetos/entardecer-fachada.jpg",
   "areaServed": { "@type": "Country", "name": "Brasil" },
   "knowsAbout": ["Arquitetura residencial", "Arquitetura comercial", "Design de interiores", "Regularização de imóveis", "Gerenciamento de obras"]
 }
@@ -343,11 +343,11 @@ try {
     </header>
 
     <div class="form-card reveal">
-      <p class="file-note" id="file-note" hidden>Você está vendo uma cópia local do site: o envio pelo site funciona depois da publicação. O envio pelo WhatsApp funciona sempre.</p>
-
-      <form id="briefing-form" name="briefing" method="POST" action="obrigado.html" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
-        <input type="hidden" name="form-name" value="briefing">
-        <p class="hp" aria-hidden="true"><label>Não preencha este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <form id="briefing-form" name="briefing" method="POST" action="https://api.web3forms.com/submit" novalidate>
+        <input type="hidden" name="access_key" id="f-key" value="">
+        <input type="hidden" name="subject" value="Novo briefing pelo site — Lívia Conde Arquitetura">
+        <input type="hidden" name="from_name" value="Site Lívia Conde Arquitetura">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
         <p class="progress-label" id="progress-label" aria-live="polite">Etapa 1 de 4</p>
@@ -396,9 +396,7 @@ try {
           <legend>Mais detalhes</legend>
           <div class="fields">
             <label class="field field--full"><span>Conte um pouco sobre o que você imagina</span><textarea name="mensagem" rows="5" placeholder="Estilo, necessidades da família, referências, dúvidas…"></textarea></label>
-            <label class="field field--full"><span>Anexo (opcional)</span>
-              <input type="file" name="anexo" id="anexo" accept=".pdf,.jpg,.jpeg,.png,.webp">
-              <small>Planta, foto do terreno ou referências. PDF, JPG, PNG ou WEBP, até 8 MB.</small></label>
+            <p class="hint field--full">Tem planta, foto do terreno ou referências? Depois de enviar, mande pelo WhatsApp para a Lívia.</p>
           </div>
           <p class="step-err" role="alert"></p>
           <div class="step-nav"><button class="btn btn--line-l" type="button" data-prev>Voltar</button><button class="btn btn--terra" type="button" data-next>Continuar</button></div>
@@ -425,7 +423,7 @@ try {
             <button class="btn btn--terra" type="submit" id="send-site">Enviar pelo site</button>
             <button class="btn btn--wa" type="button" id="send-wa">Enviar pelo WhatsApp</button>
           </div>
-          <p class="hint">Ao enviar pelo WhatsApp, o resumo do briefing já aparece pronto na conversa. Se você escolheu um anexo, envie-o por lá também.</p>
+          <p class="hint">Ao enviar pelo WhatsApp, o resumo do briefing já aparece pronto na conversa.</p>
         </fieldset>
       </form>
 
