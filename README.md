@@ -42,7 +42,7 @@ Use duas fotos com o mesmo enquadramento para o efeito ficar melhor.
 Os textos estão em `index.html` (procure por um trecho do texto com Ctrl+F). Os 7 serviços ficam na seção `id="servicos"` (cada aba tem um botão `svc-tab` e um painel `svc-pane`; o nome precisa ser igual nos dois e na lista do formulário), as perguntas frequentes em `id="duvidas"`.
 - Se mudar uma pergunta do FAQ, atualize também o bloco `FAQPage` (JSON-LD) no topo do `index.html`.
 - Se mudar o nome de um serviço, mude também na lista de serviços do formulário (etapa 1), pois o nome precisa ser igual.
-- **Biografia da Lívia:** procure `BIO` em `index.html` (dentro de `class="bio-marker"`) e troque pelo texto. A foto: troque o bloco `about-photo` por `<img src="assets/img/lívia.jpg" alt="Lívia Conde">`.
+- **Biografia e foto da Lívia:** procure `about-text` em `index.html` para editar o texto. Para trocar a foto, substitua o arquivo `assets/img/livia.jpg` (mesmo nome).
 
 ## Publicar na Vercel
 1. Suba as alterações pelo GitHub Desktop (*Commit* e *Push*).

@@ -13,10 +13,10 @@ window.SITE = {
   telefoneExibicao: "(19) 90000-0000",
   telefoneLink: "+5519900000000",
 
-  email: "contato@liviaconde.com.br",
+  email: "liviacondearq@gmail.com",
 
   // Instagram: só o usuário, sem @
-  instagram: "liviaconde.arq",
+  instagram: "liviaconde_arquitetura",
 
   // Registro profissional exibido no rodapé
   cau: "CAU A000000-0",

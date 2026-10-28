@@ -1,13 +1,11 @@
 # Pendências — o que é provisório
 
 ## Contatos e dados da marca
-- [ ] WhatsApp, telefone e e-mail reais em `js/config.js` (hoje: números e e-mail fictícios)
-- [ ] Usuário real do Instagram (hoje `liviaconde.arq`, fictício)
+- [ ] WhatsApp e telefone reais em `js/config.js` (hoje: números fictícios; e-mail e Instagram já são os reais)
 - [ ] Registro CAU real (hoje `CAU A000000-0`)
 
 ## Conteúdo
-- [ ] Foto da Lívia (espaço reservado na seção Essência)
-- [ ] Texto da biografia: marcador `BIO` em `index.html`
+- [ ] Foto da Lívia: hoje é a enviada em 28/10; trocar se houver foto em melhor resolução (`assets/img/livia.jpg`)
 - [ ] Nomes, locais, anos, áreas e etapas dos projetos em `data/projetos.js` (hoje: nomes e textos provisórios; local "A definir")
 - [ ] Fotos de obra pronta para o slider "render x obra" (campo `comparar`, hoje `null`)
 - [ ] Portfólio: cards usam a foto 1 de cada projeto; ajustar `foco` em `data/projetos.js` se o corte ficar ruim
