@@ -1,7 +1,7 @@
 # Pendências — o que é provisório
 
 ## Contatos e dados da marca
-- [ ] WhatsApp e telefone reais em `js/config.js` (hoje: números fictícios; e-mail e Instagram já são os reais)
+- [ ] Confirmar que (19) 99146-2591 é o WhatsApp e telefone definitivos (já em `js/config.js`)
 - [ ] Registro CAU real (hoje `CAU A000000-0`)
 
 ## Conteúdo
@@ -11,14 +11,14 @@
 - [ ] Portfólio: cards usam a foto 1 de cada projeto; ajustar `foco` em `data/projetos.js` se o corte ficar ruim
 - [ ] Revisar todos os textos do site (escritos a partir do PDF de apresentação)
 - [ ] Revisar o FAQ (respostas genéricas, sem preços nem prazos; atualizar também o JSON-LD `FAQPage`)
-- [ ] Descrições dos 7 serviços e dos 4 diferenciais de Gerenciamento de Obras
+- [ ] Descrições dos 8 serviços e dos 4 diferenciais de Gerenciamento de Obras
 - [ ] Imagem de cada serviço (aba da seção Serviços): hoje reaproveita renders do portfólio; trocar por fotos que combinem com cada serviço
 - [ ] Texto da Política de Privacidade (provisório): prazo de retenção, razão social/CNPJ se houver
 
 ## Publicação
 - [ ] Domínio próprio: trocar `liviaconde.vercel.app` em `index.html`, `robots.txt`, `sitemap.xml`
 - [ ] Imagem de compartilhamento (Open Graph): hoje usa `entardecer-fachada.jpg`; ideal 1200×630
-- [ ] Criar a chave do Web3Forms e colocar em `formKey` (`js/config.js`); testar um envio real após o deploy
+- [ ] Clicar no link de ativação do FormSubmit que chega em liviacondearq@gmail.com (1ª vez) e conferir um briefing de teste
 - [ ] Backend próprio (fase futura): permitir anexo no formulário e guardar briefings
 - [ ] Rodar Lighthouse no site publicado (meta mobile ≥ 90)
 - [ ] Analítica: desligada; ativar só com aviso de cookies

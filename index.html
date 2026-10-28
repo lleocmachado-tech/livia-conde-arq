@@ -182,6 +182,7 @@ try {
         <button class="svc-tab" role="tab" id="tab0" aria-selected="true" aria-controls="pane0" tabindex="0" data-servico="Projeto Residencial" type="button">Projeto Residencial</button>
         <button class="svc-tab" role="tab" id="tab1" aria-selected="false" aria-controls="pane1" tabindex="-1" data-servico="Projeto Comercial" type="button">Projeto Comercial</button>
         <button class="svc-tab" role="tab" id="tab2" aria-selected="false" aria-controls="pane2" tabindex="-1" data-servico="Design de Interiores" type="button">Design de Interiores</button>
+        <button class="svc-tab" role="tab" id="tab7" aria-selected="false" aria-controls="pane7" tabindex="-1" data-servico="Reformas e Retrofit" type="button">Reformas e Retrofit</button>
         <button class="svc-tab" role="tab" id="tab3" aria-selected="false" aria-controls="pane3" tabindex="-1" data-servico="Regularização de Imóveis" type="button">Regularização de Imóveis</button>
         <button class="svc-tab" role="tab" id="tab4" aria-selected="false" aria-controls="pane4" tabindex="-1" data-servico="Unificação e Desmembramento de Lotes" type="button">Unificação e Desmembramento de Lotes</button>
         <button class="svc-tab" role="tab" id="tab5" aria-selected="false" aria-controls="pane5" tabindex="-1" data-servico="Assessoria e Visitas Técnicas" type="button">Assessoria e Visitas Técnicas</button>
@@ -202,6 +203,11 @@ try {
           <figure class="svc-fig"><img src="assets/img/projetos/living-tropical-thumb.jpg" alt="Living com pé-direito duplo e papel de parede botânico" width="502" height="900" loading="lazy"></figure>
           <h3>Design de Interiores</h3>
           <p>Layout, materiais, iluminação e mobiliário pensados juntos, para ambientes com a sua história.</p>
+        </div>
+        <div class="svc-pane" role="tabpanel" id="pane7" aria-labelledby="tab7" hidden>
+          <figure class="svc-fig"><img src="assets/img/projetos/entardecer-entrada-thumb.jpg" alt="Entrada de residência com porta de madeira e pedra" width="726" height="900" loading="lazy"></figure>
+          <h3>Reformas e Retrofit</h3>
+          <p>Reforma, ampliação e retrofit para renovar casas, apartamentos e espaços comerciais, com projeto e planejamento da obra.</p>
         </div>
         <div class="svc-pane" role="tabpanel" id="pane3" aria-labelledby="tab3" hidden>
           <figure class="svc-fig"><img src="assets/img/projetos/branca-fachada-thumb.jpg" alt="Fachada branca com ripado e pedra" width="900" height="675" loading="lazy"></figure>
@@ -351,11 +357,11 @@ try {
     </header>
 
     <div class="form-card reveal">
-      <form id="briefing-form" name="briefing" method="POST" action="https://api.web3forms.com/submit" novalidate>
-        <input type="hidden" name="access_key" id="f-key" value="">
-        <input type="hidden" name="subject" value="Novo briefing pelo site — Lívia Conde Arquitetura">
-        <input type="hidden" name="from_name" value="Site Lívia Conde Arquitetura">
-        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <form id="briefing-form" name="briefing" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Novo briefing pelo site — Lívia Conde Arquitetura">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
         <p class="progress-label" id="progress-label" aria-live="polite">Etapa 1 de 4</p>
@@ -367,6 +373,7 @@ try {
             <label class="svc-card"><input type="radio" name="servico" value="Projeto Residencial" required data-msg="Escolha um serviço para continuar."><span>Projeto Residencial</span></label>
             <label class="svc-card"><input type="radio" name="servico" value="Projeto Comercial"><span>Projeto Comercial</span></label>
             <label class="svc-card"><input type="radio" name="servico" value="Design de Interiores"><span>Design de Interiores</span></label>
+            <label class="svc-card"><input type="radio" name="servico" value="Reformas e Retrofit"><span>Reformas e Retrofit</span></label>
             <label class="svc-card"><input type="radio" name="servico" value="Regularização de Imóveis"><span>Regularização de Imóveis</span></label>
             <label class="svc-card"><input type="radio" name="servico" value="Unificação e Desmembramento de Lotes"><span>Unificação e Desmembramento de Lotes</span></label>
             <label class="svc-card"><input type="radio" name="servico" value="Assessoria e Visitas Técnicas"><span>Assessoria e Visitas Técnicas</span></label>

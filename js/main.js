@@ -12,7 +12,12 @@
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var root = document.documentElement;
 
-  function waUrl(msg) { return 'https://wa.me/' + S.whatsapp + '?text=' + encodeURIComponent(msg); }
+  // Computador: abre o WhatsApp Web direto na conversa. Celular: abre o app (wa.me).
+  var mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  function waUrl(msg) {
+    var q = 'phone=' + S.whatsapp + '&text=' + encodeURIComponent(msg);
+    return mobile ? 'https://wa.me/' + S.whatsapp + '?text=' + encodeURIComponent(msg) : 'https://web.whatsapp.com/send?' + q;
+  }
   function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
 
   /* ---------- Config -> páginas ---------- */
@@ -144,7 +149,7 @@
       t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; panes[k].hidden = !on;
     });
     curSvc = tabs[i].getAttribute('data-servico');
-    svcWa.href = waUrl('Olá, Lívia! Vim pelo site e tenho interesse em: ' + curSvc + '. Gostaria de conversar sobre o meu projeto.');
+    svcWa.href = waUrl('Olá, Lívia! Vim pelo site e gostaria de mais informações sobre: ' + curSvc + '.');
     if (user) tabs[i].scrollIntoView({ inline: 'center', block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
   }
   tabs.forEach(function (t, i) {
@@ -387,12 +392,11 @@
     e.preventDefault();
     if (!validate(step)) return;
     var err = $('.step-err', steps[step]), btn = $('#send-site');
-    if (!S.formKey) { err.textContent = 'O envio pelo site ainda não está configurado. Use "Enviar pelo WhatsApp".'; return; }
-    $('#f-key').value = S.formKey;
+    if (!S.formEmail) { err.textContent = 'O envio pelo site ainda não está configurado. Use "Enviar pelo WhatsApp".'; return; }
     btn.disabled = true; btn.textContent = 'Enviando…';
-    fetch(F.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(F) })
+    fetch('https://formsubmit.co/ajax/' + S.formEmail, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(F) })
       .then(function (r) { return r.json(); })
-      .then(function (j) { if (!j.success) throw new Error(j.message); })
+      .then(function (j) { if (j.success !== true && j.success !== 'true') throw new Error(j.message); })
       .then(function () {
         F.hidden = true;
         var ok = $('#success'); ok.hidden = false; ok.focus();

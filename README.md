@@ -1,6 +1,6 @@
 # Site Lívia Conde Arquitetura
 
-Site estático (HTML + CSS + JavaScript puro). Abre com duplo clique em `index.html`. Hospedagem: Vercel. Formulário: Web3Forms.
+Site estático (HTML + CSS + JavaScript puro). Abre com duplo clique em `index.html`. Hospedagem: Vercel. Formulário: FormSubmit.
 
 ## Estrutura
 
@@ -39,7 +39,7 @@ comparar: {
 Use duas fotos com o mesmo enquadramento para o efeito ficar melhor.
 
 ## Como trocar textos
-Os textos estão em `index.html` (procure por um trecho do texto com Ctrl+F). Os 7 serviços ficam na seção `id="servicos"` (cada aba tem um botão `svc-tab` e um painel `svc-pane`; o nome precisa ser igual nos dois e na lista do formulário), as perguntas frequentes em `id="duvidas"`.
+Os textos estão em `index.html` (procure por um trecho do texto com Ctrl+F). Os 8 serviços ficam na seção `id="servicos"` (cada aba tem um botão `svc-tab` e um painel `svc-pane`; o nome precisa ser igual nos dois e na lista do formulário), as perguntas frequentes em `id="duvidas"`.
 - Se mudar uma pergunta do FAQ, atualize também o bloco `FAQPage` (JSON-LD) no topo do `index.html`.
 - Se mudar o nome de um serviço, mude também na lista de serviços do formulário (etapa 1), pois o nome precisa ser igual.
 - **Biografia e foto da Lívia:** procure `about-text` em `index.html` para editar o texto. Para trocar a foto, substitua o arquivo `assets/img/livia.jpg` (mesmo nome).
@@ -47,7 +47,7 @@ Os textos estão em `index.html` (procure por um trecho do texto com Ctrl+F). Os
 ## Publicar na Vercel
 1. Suba as alterações pelo GitHub Desktop (*Commit* e *Push*).
 2. Na Vercel: *Add New → Project*, escolha o repositório `livia-conde-arq`, deixe *Framework Preset* em **Other** e *Build Command* / *Output Directory* vazios. Clique em *Deploy*. Cada novo push publica sozinho.
-3. **Formulário de briefing:** crie uma chave grátis em [web3forms.com](https://web3forms.com) (informe o e-mail que receberá os briefings) e cole em `formKey` no `js/config.js`. Enquanto estiver vazia, só o envio pelo WhatsApp funciona. O plano grátis não aceita anexos; o formulário pede que a pessoa mande planta/fotos pelo WhatsApp.
+3. **Formulário de briefing:** os briefings chegam por e-mail no endereço de `formEmail` (`js/config.js`), via FormSubmit, sem cadastro. Na primeira vez, o FormSubmit envia um e-mail de ativação para esse endereço: abra e clique no link. O plano grátis não aceita anexos; o formulário pede que a pessoa mande planta/fotos pelo WhatsApp.
 4. Com o domínio definido, troque `liviaconde.vercel.app` em `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` e `sitemap.xml`.
 
 ## Analítica

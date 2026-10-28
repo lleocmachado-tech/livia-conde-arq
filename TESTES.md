@@ -19,7 +19,7 @@ Testes feitos no navegador embutido do Claude (Chromium), servindo a pasta por `
 - **Intro:** aparece só na 1ª visita da sessão (sessionStorage), fecha sozinha em ~1,9 s e remove-se do DOM visível; não roda com `prefers-reduced-motion`.
 
 ## Não testado / limitações
-- **Envio pelo Web3Forms:** só funciona com a `formKey` preenchida; sem ela, exibe aviso e indica o WhatsApp. Envio real não testado (sem chave). Anexo removido do formulário (plano grátis não aceita).
+- **Envio pelo FormSubmit:** depende da ativação do e-mail (link enviado na 1ª submissão). Anexo removido do formulário (plano grátis não aceita).
 - **Swipe no celular real:** implementado com pointer events; não testado em toque físico.
 - **Animação da intro (traço do "L") e Ken Burns:** o painel de teste limita animações, então a fluidez não foi avaliada visualmente; verifique no navegador.
 - **Navegação por teclado completa e leitor de tela:** apenas foco visível, ARIA nos acordeões/menu/visualizador e armadilha de foco no visualizador foram implementados; não houve auditoria com leitor de tela.
