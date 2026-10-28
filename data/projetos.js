@@ -17,7 +17,9 @@
                 { antes: "caminho-render.jpg", depois: "caminho-obra.jpg",
                   rotuloAntes: "Render", rotuloDepois: "Obra pronta" }
                 Se não houver, deixe: comparar: null
-   destaque   → true = card maior no portfólio
+   destaque   → true = card em largura total no portfólio
+   foco       → (opcional) parte da foto que aparece no card, ex.: "50% 30%"
+                (horizontal vertical). Útil para fotos em pé.
 
    ⚠ Nomes, locais e textos abaixo são PROVISÓRIOS
      (imagens retiradas do portfólio em PDF).
@@ -65,6 +67,7 @@ window.PROJETOS = [
     resumo: "Pé-direito duplo, forro de madeira e papel de parede botânico criam um living sereno, banhado por luz natural filtrada.",
     capa: "assets/img/projetos/living-tropical-thumb.jpg",
     fotos: ["assets/img/projetos/living-tropical.jpg"],
+    foco: "50% 35%",
     comparar: null,
     destaque: false
   },
@@ -79,6 +82,7 @@ window.PROJETOS = [
     resumo: "Grandes panos de vidro integram a área social à varanda. À noite, a pedra rústica e a iluminação cênica transformam a casa em abrigo.",
     capa: "assets/img/projetos/noturna-fachada-thumb.jpg",
     fotos: ["assets/img/projetos/noturna-fachada.jpg"],
+    foco: "50% 45%",
     comparar: null,
     destaque: false
   },

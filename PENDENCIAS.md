@@ -10,6 +10,7 @@
 - [ ] Texto da biografia: marcador `BIO` em `index.html`
 - [ ] Nomes, locais, anos, áreas e etapas dos projetos em `data/projetos.js` (hoje: nomes e textos provisórios; local "A definir")
 - [ ] Fotos de obra pronta para o slider "render x obra" (campo `comparar`, hoje `null`)
+- [ ] Portfólio: cards usam a foto 1 de cada projeto; ajustar `foco` em `data/projetos.js` se o corte ficar ruim
 - [ ] Revisar todos os textos do site (escritos a partir do PDF de apresentação)
 - [ ] Revisar o FAQ (respostas genéricas, sem preços nem prazos; atualizar também o JSON-LD `FAQPage`)
 - [ ] Descrições dos 7 serviços e dos 4 diferenciais de Gerenciamento de Obras

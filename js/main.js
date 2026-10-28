@@ -92,9 +92,12 @@
   } else { reveals.forEach(function (el) { el.classList.add('in'); }); }
 
   /* ---------- Rolagem: parallax, linha curva, progresso do processo ---------- */
-  var parEls = $$('[data-parallax]'), curve = $('#curve-path'), essence = $('#essencia'), tl = $('#timeline');
-  var curveLen = 0;
-  if (curve) { curveLen = curve.getTotalLength(); curve.style.strokeDasharray = curveLen; curve.style.strokeDashoffset = reduce ? 0 : curveLen; }
+  var parEls = $$('[data-parallax]'), tl = $('#timeline');
+  var curves = $$('.curve path').map(function (p) {
+    var len = p.getTotalLength();
+    p.style.strokeDasharray = len; p.style.strokeDashoffset = reduce ? 0 : len;
+    return { p: p, len: len, sec: p.closest('section') };
+  });
   var ticking = false;
   function frame() {
     ticking = false;
@@ -106,11 +109,12 @@
         var p = (r.top + r.height / 2 - vh / 2) / vh;
         img.style.transform = 'translate3d(0,' + (p * -48).toFixed(1) + 'px,0)';
       });
-      if (curve) {
-        var cr = essence.getBoundingClientRect();
+      curves.forEach(function (c) {
+        var cr = c.sec.getBoundingClientRect();
+        if (cr.bottom < 0 || cr.top > vh) return;
         var cp = clamp((vh * 0.85 - cr.top) / (cr.height * 0.9), 0, 1);
-        curve.style.strokeDashoffset = (curveLen * (1 - cp)).toFixed(1);
-      }
+        c.p.style.strokeDashoffset = (c.len * (1 - cp)).toFixed(1);
+      });
     }
     if (tl) {
       var tr = tl.getBoundingClientRect();
@@ -168,10 +172,12 @@
   grid.innerHTML = PROJ.map(function (p) {
     return '<li class="card' + (p.destaque ? ' card--big' : '') + '" data-cat="' + esc(p.categoria) + '">' +
       '<button class="card-btn" type="button" data-id="' + esc(p.id) + '" aria-label="Abrir projeto ' + esc(p.titulo) + '">' +
-      '<img src="' + esc(p.capa) + '" alt="Render do projeto ' + esc(p.titulo) + ' (' + esc(p.categoria) + ')" width="900" height="675" loading="lazy">' +
-      '<span class="card-info"><span class="card-cat">' + esc(p.categoria) + '</span><span class="card-title">' + esc(p.titulo) + '</span></span>' +
+      '<img src="' + esc(p.fotos[0] || p.capa) + '" alt="Render do projeto ' + esc(p.titulo) + ' (' + esc(p.categoria) + ')" width="1600" height="900" loading="lazy"' + (p.foco ? ' style="object-position:' + esc(p.foco) + '"' : '') + '>' +
+      '<span class="card-info"><span class="card-cat">' + esc(p.categoria) + '</span><span class="card-title">' + esc(p.titulo) + '</span></span><span class="card-go" aria-hidden="true"></span>' +
       '</button></li>';
   }).join('');
+
+  $$('.card', grid).forEach(function (c) { c.classList.add('reveal'); if (io) io.observe(c); else c.classList.add('in'); });
 
   if (cats.length > 1) {
     filters.innerHTML = ['Todos'].concat(cats).map(function (c, i) {
