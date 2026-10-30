@@ -32,7 +32,7 @@ try {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/projetos/flor-daldeia-1.jpg">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=12">
 
 <script type="application/ld+json" id="ld-negocio">
 {
@@ -81,6 +81,23 @@ try {
   </div>
 </div>
 
+<!-- Transição entre páginas -->
+<div id="pt" aria-hidden="true">
+  <div class="pt-b"></div><div class="pt-p"></div>
+  <svg class="pt-mono" viewBox="0 0 900 429" aria-hidden="true">
+    <defs>
+      <mask id="pt-m" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="429">
+        <path class="pt-s" pathLength="1" d="M245,0 L5,377 C30,364 60,351 90,343 C130,336 160,333 198,335"/>
+        <rect class="pt-w pt-w1" x="190" y="296" width="230" height="80"/>
+        <rect class="pt-w pt-w2" x="186" y="70" width="720" height="232"/>
+        <rect class="pt-a" x="0" y="378" width="900" height="51"/>
+        <rect class="pt-f" width="900" height="429"/>
+      </mask>
+    </defs>
+    <image href="assets/logo/logo-arq-cor.png" width="900" height="429" mask="url(#pt-m)"/>
+  </svg>
+</div>
+
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
 <!-- Header -->
@@ -103,7 +120,9 @@ try {
   </div>
 </header>
 
-<main id="conteudo">
+<main id="conteudo" tabindex="-1">
+
+<div class="page page--home" data-page="inicio">
 
 <!-- Hero -->
 <section class="hero" id="topo" aria-labelledby="hero-titulo">
@@ -122,38 +141,16 @@ try {
       <a class="btn btn--ghost" href="#portfolio">Ver projetos</a>
     </div>
   </div>
-  <a class="scroll-ind" href="#essencia" aria-label="Rolar para a próxima seção"><span>Role</span><i></i></a>
+  <a class="scroll-ind" href="#sobre" aria-label="Rolar para a próxima seção"><span>Role</span><i></i></a>
   <svg class="wave wave--hero" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><use href="#wave-shape"/></svg>
 </section>
 
-<!-- Essência -->
-<section class="section essence" id="essencia" aria-labelledby="essencia-titulo">
+<!-- Sobre a Lívia e equipe -->
+<section class="section essence" id="sobre" aria-label="Sobre a Lívia e nossa equipe">
   <svg class="curve" viewBox="0 0 1440 1000" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M-20,80 C260,-20 420,360 740,330 S1180,200 1280,520 S1180,860 1470,940"/></svg>
   <div class="wrap">
-    <div class="essence-top">
-      <div class="essence-text">
-        <p class="eyebrow reveal">Quem somos</p>
-        <h2 id="essencia-titulo" class="reveal"><span class="script">Nossa essência</span><br>Arquitetura com <em>propósito</em></h2>
-        <p class="lead reveal">Arquitetura personalizada, que conecta, inspira e acolhe.</p>
-        <p class="reveal">Um projeto nasce de uma ideia que vira espaço, com um olhar atento, sensível e técnico. Tudo começa numa conversa: ouvir como você vive para desenhar um lugar que seja seu.</p>
-        <p class="reveal">Do seu gosto... do jeito que você sempre sonhou!</p>
-      </div>
-      <figure class="essence-img reveal">
-        <img data-parallax src="assets/img/projetos/essencia.jpg" alt="Sala de reuniões clara com madeira, escada e vegetação" width="1600" height="1600" loading="lazy">
-      </figure>
-    </div>
-
-    <ol class="pillars">
-      <li class="reveal" style="--d:0s"><span class="pillar-n" aria-hidden="true"></span><h3>Design atemporal</h3><p>Soluções que não saem de moda.</p></li>
-      <li class="reveal" style="--d:.08s"><span class="pillar-n" aria-hidden="true"></span><h3>Funcionalidade</h3><p>Cada metro pensado para o uso real.</p></li>
-      <li class="reveal" style="--d:.16s"><span class="pillar-n" aria-hidden="true"></span><h3>Bem-estar</h3><p>Luz, ventilação e conforto para quem vive ali.</p></li>
-      <li class="reveal" style="--d:.24s"><span class="pillar-n" aria-hidden="true"></span><h3>Personalidade</h3><p>Projetos com a sua cara, não fórmula pronta.</p></li>
-      <li class="reveal" style="--d:.32s"><span class="pillar-n" aria-hidden="true"></span><h3>Beleza</h3><p>Proporção, materiais e detalhes que encantam.</p></li>
-    </ol>
-
     <div class="about">
-      <figure class="about-photo reveal">
-        <img src="assets/img/livia.jpg" alt="Lívia Conde, arquiteta e fundadora" width="1066" height="1599" loading="lazy">
+      <figure class="about-photo reveal"><span class="bgblur" style="background-image:url(assets/img/livia.jpg)"></span><img src="assets/img/livia.jpg" alt="Lívia Conde, arquiteta e fundadora" width="1066" height="1599" loading="lazy">
       </figure>
       <div class="about-text reveal">
         <p class="eyebrow">Sobre a Lívia</p>
@@ -172,12 +169,46 @@ try {
         <h3 class="h3-serif">Um time que cuida de <em>cada etapa</em></h3>
         <p>A Lívia não está sozinha. Uma equipe dedicada acompanha cada projeto, do primeiro desenho à entrega, com o mesmo cuidado e a mesma proximidade com você.</p>
       </div>
-      <figure class="team-photo reveal">
-        <img src="assets/img/equipe.jpg" alt="Equipe da Lívia Conde Arquitetura no escritório" width="1024" height="1536" loading="lazy">
+      <figure class="team-photo reveal"><span class="bgblur" style="background-image:url(assets/img/equipe.jpg)"></span><img src="assets/img/equipe.jpg" alt="Equipe da Lívia Conde Arquitetura no escritório" width="1024" height="1536" loading="lazy">
       </figure>
     </div>
   </div>
 </section>
+
+</div>
+
+<div class="page" data-page="essencia">
+
+<!-- Essência -->
+<section class="section essence" id="essencia" aria-labelledby="essencia-titulo">
+  <svg class="curve" viewBox="0 0 1440 1000" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M-20,80 C260,-20 420,360 740,330 S1180,200 1280,520 S1180,860 1470,940"/></svg>
+  <div class="wrap">
+    <div class="essence-top">
+      <div class="essence-text">
+        <p class="eyebrow reveal">Quem somos</p>
+        <h2 id="essencia-titulo" class="reveal"><span class="script">Nossa essência</span><br>Arquitetura com <em>propósito</em></h2>
+        <p class="lead reveal">Arquitetura personalizada, que conecta, inspira e acolhe.</p>
+        <p class="reveal">Um projeto nasce de uma ideia que vira espaço, com um olhar atento, sensível e técnico. Tudo começa numa conversa: ouvir como você vive para desenhar um lugar que seja seu.</p>
+        <p class="reveal">Do seu gosto... do jeito que você sempre sonhou!</p>
+      </div>
+      <figure class="essence-img reveal"><span class="bgblur" style="background-image:url(assets/img/projetos/essencia.jpg)"></span><img data-parallax src="assets/img/projetos/essencia.jpg" alt="Sala de reuniões clara com madeira, escada e vegetação" width="1600" height="1600" loading="lazy">
+      </figure>
+    </div>
+
+    <ol class="pillars">
+      <li class="reveal" style="--d:0s"><span class="pillar-n" aria-hidden="true"></span><h3>Design atemporal</h3><p>Soluções que não saem de moda.</p></li>
+      <li class="reveal" style="--d:.08s"><span class="pillar-n" aria-hidden="true"></span><h3>Funcionalidade</h3><p>Cada metro pensado para o uso real.</p></li>
+      <li class="reveal" style="--d:.16s"><span class="pillar-n" aria-hidden="true"></span><h3>Bem-estar</h3><p>Luz, ventilação e conforto para quem vive ali.</p></li>
+      <li class="reveal" style="--d:.24s"><span class="pillar-n" aria-hidden="true"></span><h3>Personalidade</h3><p>Projetos com a sua cara, não fórmula pronta.</p></li>
+      <li class="reveal" style="--d:.32s"><span class="pillar-n" aria-hidden="true"></span><h3>Beleza</h3><p>Proporção, materiais e detalhes que encantam.</p></li>
+    </ol>
+
+  </div>
+</section>
+
+</div>
+
+<div class="page" data-page="servicos">
 
 <!-- Serviços -->
 <section class="section section--white" id="servicos" aria-labelledby="servicos-titulo">
@@ -201,42 +232,42 @@ try {
       </div>
       <div class="svc-stage reveal">
         <div class="svc-pane" role="tabpanel" id="pane0" aria-labelledby="tab0">
-          <figure class="svc-fig"><img src="assets/img/projetos/flor-daldeia-1-thumb.jpg" alt="Fachada contemporânea ao entardecer" width="900" height="502" loading="lazy"></figure>
+          <figure class="svc-fig"><span class="bgblur" style="background-image:url(assets/img/projetos/flor-daldeia-1-thumb.jpg)"></span><img src="assets/img/projetos/flor-daldeia-1-thumb.jpg" alt="Fachada contemporânea ao entardecer" width="900" height="502" loading="lazy"></figure>
           <h3>Projeto Residencial</h3>
           <p>Casas e apartamentos pensados para o seu jeito de viver, do primeiro traço ao projeto executivo.</p>
         </div>
         <div class="svc-pane" role="tabpanel" id="pane1" aria-labelledby="tab1" hidden>
-          <figure class="svc-fig"><img src="assets/img/projetos/restaurantes-1-thumb.jpg" alt="Fachada de restaurante iluminada à noite" width="900" height="675" loading="lazy"></figure>
+          <figure class="svc-fig"><span class="bgblur" style="background-image:url(assets/img/projetos/amarilis-1-thumb.jpg)"></span><img src="assets/img/projetos/amarilis-1-thumb.jpg" alt="Fachada de restaurante com letreiro iluminado" width="900" height="675" loading="lazy"></figure>
           <h3>Projeto Comercial</h3>
           <p>Lojas, consultórios e escritórios que mostram a sua marca e funcionam bem no dia a dia.</p>
         </div>
         <div class="svc-pane" role="tabpanel" id="pane2" aria-labelledby="tab2" hidden>
-          <figure class="svc-fig"><img src="assets/img/projetos/boticario-1-thumb.jpg" alt="Sala de treinamento clara com cadeiras coloridas" width="900" height="900" loading="lazy" style="object-position:50% 40%"></figure>
+          <figure class="svc-fig"><span class="bgblur" style="background-image:url(assets/img/projetos/cidade-jardim-1-thumb.jpg)"></span><img src="assets/img/projetos/cidade-jardim-1-thumb.jpg" alt="Cozinha integrada em tons suaves com madeira" width="900" height="600" loading="lazy"></figure>
           <h3>Design de Interiores</h3>
           <p>Layout, materiais, iluminação e mobiliário pensados juntos, para ambientes com a sua história.</p>
         </div>
         <div class="svc-pane" role="tabpanel" id="pane7" aria-labelledby="tab7" hidden>
-          <figure class="svc-fig"><img src="assets/img/projetos/refugio-1-thumb.jpg" alt="Casa com telhado cerâmico, pedra e portas de madeira" width="900" height="1117" loading="lazy" style="object-position:50% 40%"></figure>
+          <figure class="svc-fig"><span class="bgblur" style="background-image:url(assets/img/projetos/reforma-viva-1-thumb.jpg)"></span><img src="assets/img/projetos/reforma-viva-1-thumb.jpg" alt="Fachada comercial renovada com letreiro iluminado" width="900" height="675" loading="lazy"></figure>
           <h3>Reformas e Retrofit</h3>
           <p>Reforma, ampliação e retrofit para renovar casas, apartamentos e espaços comerciais, com projeto e planejamento da obra.</p>
         </div>
         <div class="svc-pane" role="tabpanel" id="pane3" aria-labelledby="tab3" hidden>
-          <figure class="svc-fig"><img src="assets/img/projetos/lago-azul-1-thumb.jpg" alt="Residência branca com varanda e paisagismo" width="900" height="675" loading="lazy"></figure>
+          <figure class="svc-fig"><span class="bgblur" style="background-image:url(assets/img/projetos/regularizacao-1-thumb.jpg)"></span><img src="assets/img/projetos/regularizacao-1-thumb.jpg" alt="Planta de casa com carimbo de projeto aprovado" width="750" height="900" loading="lazy"></figure>
           <h3>Regularização de Imóveis</h3>
           <p>Orientação e projetos para deixar a documentação do seu imóvel em dia.</p>
         </div>
         <div class="svc-pane" role="tabpanel" id="pane4" aria-labelledby="tab4" hidden>
-          <figure class="svc-fig"><img src="assets/img/projetos/chacara-cs-1-thumb.jpg" alt="Chácara com pedra e vidro iluminada à noite" width="900" height="1117" loading="lazy" style="object-position:50% 45%"></figure>
+          <figure class="svc-fig"><span class="bgblur" style="background-image:url(assets/img/projetos/desmembramento-1-thumb.jpg)"></span><img src="assets/img/projetos/desmembramento-1-thumb.jpg" alt="Plantas de desmembramento e unificação de lotes com carimbo de aprovado" width="600" height="900" loading="lazy"></figure>
           <h3>Unificação e Desmembramento de Lotes</h3>
           <p>Projeto e suporte técnico para unir ou dividir terrenos.</p>
         </div>
         <div class="svc-pane" role="tabpanel" id="pane5" aria-labelledby="tab5" hidden>
-          <figure class="svc-fig"><img src="assets/img/projetos/explorar-1-thumb.jpg" alt="Casa com vidro e pedra voltada ao jardim" width="900" height="900" loading="lazy" style="object-position:50% 65%"></figure>
+          <figure class="svc-fig"><span class="bgblur" style="background-image:url(assets/img/projetos/explorar-1-thumb.jpg)"></span><img src="assets/img/projetos/explorar-1-thumb.jpg" alt="Casa com vidro e pedra voltada ao jardim" width="900" height="900" loading="lazy"></figure>
           <h3>Assessoria e Visitas Técnicas</h3>
           <p>Um olhar técnico antes de comprar um imóvel ou para tirar dúvidas de obra, presencial ou online.</p>
         </div>
         <div class="svc-pane" role="tabpanel" id="pane6" aria-labelledby="tab6" hidden>
-          <figure class="svc-fig"><img src="assets/img/projetos/formas-1-thumb.jpg" alt="Fachada moderna com palmeiras" width="900" height="675" loading="lazy"></figure>
+          <figure class="svc-fig"><span class="bgblur" style="background-image:url(assets/img/projetos/formas-1-thumb.jpg)"></span><img src="assets/img/projetos/formas-1-thumb.jpg" alt="Fachada moderna com palmeiras" width="900" height="675" loading="lazy"></figure>
           <h3>Gerenciamento de Obras</h3>
           <p>Planejamento e acompanhamento da obra, para o projeto sair do papel com qualidade e transparência.</p>
         </div>
@@ -248,6 +279,10 @@ try {
     </div>
   </div>
 </section>
+
+</div>
+
+<div class="page" data-page="obras">
 
 <!-- Gerenciamento de Obras -->
 <div class="wave-box wave-box--in" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
@@ -272,6 +307,10 @@ try {
 </section>
 <div class="wave-box wave-box--out" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
 
+</div>
+
+<div class="page" data-page="portfolio">
+
 <!-- Portfólio -->
 <section class="section portfolio" id="portfolio" aria-labelledby="portfolio-titulo">
   <div class="wrap">
@@ -283,6 +322,10 @@ try {
     <ul class="grid" id="grid"></ul>
   </div>
 </section>
+
+</div>
+
+<div class="page" data-page="processo">
 
 <!-- Processo -->
 <section class="section section--white process" id="processo" aria-labelledby="processo-titulo">
@@ -344,17 +387,9 @@ try {
   </div>
 </section>
 
-<!-- Instagram -->
-<section class="section section--white insta" aria-labelledby="insta-titulo">
-  <div class="wrap">
-    <header class="sec-head center reveal">
-      <p class="eyebrow">Acompanhe</p>
-      <h2 id="insta-titulo">Veja mais no <em>Instagram</em></h2>
-      <a class="insta-handle" data-ig target="_blank" rel="noopener"><span data-cfg="instagramArroba"></span></a>
-    </header>
-    <ul class="insta-grid" id="insta-grid"></ul>
-  </div>
-</section>
+</div>
+
+<div class="page" data-page="briefing">
 
 <!-- Briefing -->
 <div class="wave-box wave-box--in wave-box--white" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
@@ -464,6 +499,10 @@ try {
 </section>
 <div class="wave-box wave-box--out wave-box--out-paper" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
 
+</div>
+
+<div class="page" data-page="contato">
+
 <!-- Contato -->
 <section class="section contact" id="contato" aria-labelledby="contato-titulo">
   <div class="wrap">
@@ -488,10 +527,25 @@ try {
     </ul>
   </div>
 </section>
+
+<!-- Instagram -->
+<section class="section section--white insta" aria-labelledby="insta-titulo">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="eyebrow">Acompanhe</p>
+      <h2 id="insta-titulo">Veja mais no <em>Instagram</em></h2>
+      <a class="insta-handle" data-ig target="_blank" rel="noopener"><span data-cfg="instagramArroba"></span></a>
+    </header>
+    <ul class="insta-grid" id="insta-grid"></ul>
+  </div>
+</section>
+
+</div>
+
 </main>
 
 <!-- Rodapé -->
-<div class="wave-box wave-box--in" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
+<div class="wave-box wave-box--in" id="fwave" aria-hidden="true"><svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#wave-shape"/></svg></div>
 <footer class="footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
@@ -543,8 +597,8 @@ try {
   </aside>
 </div>
 
-<script src="js/config.js"></script>
-<script src="data/projetos.js"></script>
-<script src="js/main.js"></script>
+<script src="js/config.js?v=12"></script>
+<script src="data/projetos.js?v=12"></script>
+<script src="js/main.js?v=12"></script>
 </body>
 </html>

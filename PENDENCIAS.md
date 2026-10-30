@@ -6,8 +6,9 @@
 
 ## Conteúdo
 - [ ] Foto da Lívia: hoje é a enviada em 28/10; trocar se houver foto em melhor resolução (`assets/img/livia.jpg`)
-- [ ] Projetos em `data/projetos.js`: títulos vêm dos nomes das pastas do Drive e os textos são descrições simples; preencher local, ano e área (hoje vazios) e confirmar se os nomes de clientes (Grupo Boticário, D3 Motors, Instituto Médico Casagrande, restaurantes) podem aparecer
-- [ ] Fotos de obra pronta para o slider "render x obra" (campo `comparar`, hoje `null`)
+- [ ] Projetos em `data/projetos.js`: categorias e títulos vêm das pastas do Drive (Residencial, Comercial, Interiores, Reformas, Regularização, Desmembramento) e os textos são descrições simples; preencher local, ano e área (hoje vazios) e confirmar se os nomes de clientes (Grupo Boticário, D3 Motors, Instituto Médico Casagrande, Amarílis, Bistrô da IDI, Tulipa's Lounge, Padaria Eskina, Stevanatto, Alcir, Grupo Viva etc.) podem aparecer
+- [ ] Reformas: confirmar o que significam "S.E." e "K.E." nos títulos (vêm dos nomes das pastas) e se o "depois" é render ou obra pronta
+- [ ] Fotos de obra pronta para o slider "render x obra" (campo `comparar`; hoje só as 3 reformas usam antes x depois)
 - [ ] Portfólio: cards usam a foto 1 de cada projeto; ajustar `foco` em `data/projetos.js` se o corte ficar ruim
 - [ ] Equipe: nomes e funções (hoje só texto genérico e a foto); confirmar o texto da seção
 - [ ] Revisar todos os textos do site (escritos a partir do PDF de apresentação)

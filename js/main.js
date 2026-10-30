@@ -64,7 +64,8 @@
 
   /* ---------- Header ---------- */
   var header = $('#header'), burger = $('#burger'), nav = $('#nav');
-  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 40); }
+  var curPage = null; // página aberta (null até o roteador rodar)
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 40 || (curPage !== null && curPage !== 'inicio')); }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   function setMenu(open) {
@@ -98,11 +99,7 @@
 
   /* ---------- Rolagem: parallax, linha curva, progresso do processo ---------- */
   var parEls = $$('[data-parallax]'), tl = $('#timeline');
-  var curves = $$('.curve path').map(function (p) {
-    var len = p.getTotalLength();
-    p.style.strokeDasharray = len; p.style.strokeDashoffset = reduce ? 0 : len;
-    return { p: p, len: len, sec: p.closest('section') };
-  });
+  var curves = $$('.curve path').map(function (p) { return { p: p, len: 0, sec: p.closest('section') }; });
   var ticking = false;
   function frame() {
     ticking = false;
@@ -110,11 +107,13 @@
     if (!reduce) {
       parEls.forEach(function (img) {
         var r = img.parentNode.getBoundingClientRect();
-        if (r.bottom < -100 || r.top > vh + 100) return;
+        if (!img.offsetParent || r.bottom < -100 || r.top > vh + 100) return;
         var p = (r.top + r.height / 2 - vh / 2) / vh;
         img.style.transform = 'translate3d(0,' + (p * -48).toFixed(1) + 'px,0)';
       });
       curves.forEach(function (c) {
+        if (!c.sec.offsetHeight) return;
+        if (!c.len) { c.len = c.p.getTotalLength(); c.p.style.strokeDasharray = c.len; }
         var cr = c.sec.getBoundingClientRect();
         if (cr.bottom < 0 || cr.top > vh) return;
         var cp = clamp((vh * 0.85 - cr.top) / (cr.height * 0.9), 0, 1);
@@ -176,8 +175,9 @@
 
   grid.innerHTML = PROJ.map(function (p) {
     return '<li class="card' + (p.destaque ? ' card--big' : '') + '" data-cat="' + esc(p.categoria) + '">' +
-      '<button class="card-btn" type="button" data-id="' + esc(p.id) + '" aria-label="Abrir projeto ' + esc(p.titulo) + '">' +
-      '<img src="' + esc(p.fotos[0] || p.capa) + '" alt="Render do projeto ' + esc(p.titulo) + ' (' + esc(p.categoria) + ')" width="1600" height="900" loading="lazy"' + (p.foco ? ' style="object-position:' + esc(p.foco) + '"' : '') + '>' +
+      '<button class="card-btn" type="button" data-id="' + esc(p.id) + '" aria-label="Abrir projeto ' + esc(p.titulo) + '"">' +
+      '<span class="bgblur" style="background-image:url(' + esc(p.capa) + ')"></span>' +
+      '<img src="' + esc(p.fotos[0] || p.capa) + '" alt="Render do projeto ' + esc(p.titulo) + ' (' + esc(p.categoria) + ')" width="1600" height="900" loading="lazy">' +
       '<span class="card-info"><span class="card-cat">' + esc(p.categoria) + '</span><span class="card-title">' + esc(p.titulo) + '</span></span><span class="card-go" aria-hidden="true"></span>' +
       '</button></li>';
   }).join('');
@@ -209,7 +209,7 @@
   var ig = $('#insta-grid');
   var thumbs = PROJ.slice(0, 6);
   ig.innerHTML = thumbs.map(function (p) {
-    return '<li><a href="' + igUrl + '" target="_blank" rel="noopener" aria-label="Ver ' + esc(p.titulo) + ' no Instagram"><img src="' + esc(p.capa) + '" alt="' + esc(p.titulo) + '" width="900" height="675" loading="lazy"></a></li>';
+    return '<li><a href="' + igUrl + '" target="_blank" rel="noopener" aria-label="Ver ' + esc(p.titulo) + ' no Instagram"><span class="bgblur" style="background-image:url(' + esc(p.capa) + ')"></span><img src="' + esc(p.capa) + '" alt="' + esc(p.titulo) + '" width="900" height="675" loading="lazy"></a></li>';
   }).join('');
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -247,7 +247,7 @@
     var cmp = $('#v-compare');
     if (p.comparar && p.comparar.antes && p.comparar.depois) {
       var c = p.comparar;
-      cmp.innerHTML = '<p class="cmp-title">Render × obra pronta</p><div class="cmp">' +
+      cmp.innerHTML = '<p class="cmp-title">' + esc(c.titulo || 'Render × obra pronta') + '</p><div class="cmp">' +
         '<img src="' + esc(c.depois) + '" alt="' + esc(c.rotuloDepois || 'Obra pronta') + '">' +
         '<img class="cmp-before" src="' + esc(c.antes) + '" alt="' + esc(c.rotuloAntes || 'Render') + '">' +
         '<span class="cmp-label l">' + esc(c.rotuloAntes || 'Render') + '</span><span class="cmp-label r">' + esc(c.rotuloDepois || 'Obra pronta') + '</span>' +
@@ -280,15 +280,7 @@
     }
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
-  var baseTitle = document.title;
-
-  function route() {
-    var m = location.hash.match(/^#projeto\/(.+)$/);
-    if (m) { if (!openProject(decodeURIComponent(m[1]))) closeViewer(false); }
-    else closeViewer(false);
-  }
-  window.addEventListener('hashchange', route);
-  if (/^#projeto\//.test(location.hash)) route();
+  var baseTitle = document.title, homeTitle = baseTitle;
 
   $('#v-close').addEventListener('click', function () { closeViewer(true); });
   $('#v-prev').addEventListener('click', function () { showPhoto(idx - 1); });
@@ -412,13 +404,68 @@
     var r = $$('input[name="servico"]', F).filter(function (x) { return x.value === servico; })[0];
     if (r) { r.checked = true; $$('.step-err', F).forEach(function (x) { x.textContent = ''; }); }
     showStep(0, false);
-    $('#briefing').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    if (location.hash === '#briefing') route(); else location.hash = 'briefing';
   }
-  // links "Solicitar orçamento" e afins já rolam via âncora #briefing
 
   // Botão flutuante some enquanto o briefing está na tela (não cobre os botões de envio)
   var fab = $('#fab');
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { fab.classList.toggle('away', es[0].isIntersecting); }, { threshold: 0.05 }).observe($('#briefing'));
   }
+
+  /* ---------- Páginas: cada link do menu abre uma página, com transição do monograma ---------- */
+  var pageEls = {}, fwave = $('#fwave'), pt = $('#pt'), ptN = 0, busy = false;
+  $$('.page').forEach(function (p) { pageEls[p.getAttribute('data-page')] = p; });
+  var PAGE_TITLES = { essencia: 'Essência', servicos: 'Serviços', obras: 'Gerenciamento de Obras', portfolio: 'Portfólio', processo: 'Processo e dúvidas', briefing: 'Solicitar orçamento', contato: 'Contato' };
+
+  function showPage(name) {
+    Object.keys(pageEls).forEach(function (k) { pageEls[k].classList.toggle('is-active', k === name); });
+    var first = curPage === null;
+    curPage = name;
+    $$('a', nav).forEach(function (a) {
+      if (a.getAttribute('href') === '#' + name) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    baseTitle = name === 'inicio' ? homeTitle : PAGE_TITLES[name] + ' — Lívia Conde Arquitetura';
+    if (V.hidden) document.title = baseTitle;
+    fwave.classList.toggle('wave-box--white', name === 'servicos' || name === 'contato'); // rodapé combina com o fim da página
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    onScroll();
+    $$('.reveal', pageEls[name]).forEach(function (el) { // as animações de entrada rodam a cada visita
+      el.classList.remove('in');
+      if (io) io.observe(el); else el.classList.add('in');
+    });
+    curves.forEach(function (c) { if (c.len && pageEls[name].contains(c.p)) c.p.style.strokeDashoffset = reduce ? 0 : c.len; });
+    if (name === 'inicio' && !first) { document.body.classList.remove('hero-in'); void document.body.offsetWidth; startPage(); }
+    frame();
+    if (!first) $('#conteudo').focus({ preventScroll: true });
+  }
+
+  function scrollTo(el, smooth) {
+    if (el) el.scrollIntoView({ behavior: smooth && !reduce ? 'smooth' : 'instant', block: 'start' });
+    else window.scrollTo({ top: 0, behavior: smooth && !reduce ? 'smooth' : 'instant' });
+  }
+
+  function go(name, el) {
+    if (name === curPage) { scrollTo(el, true); return; }
+    if (curPage === null || reduce || !pt) { showPage(name); scrollTo(el, false); return; }
+    if (busy) return;
+    busy = true;
+    pt.setAttribute('data-v', ptN++ % 5);             // cada troca usa uma variação diferente
+    pt.className = 'on'; void pt.offsetWidth; pt.classList.add('cover');
+    setTimeout(function () { showPage(name); scrollTo(el, false); }, 1700);
+    setTimeout(function () { pt.classList.add('leave'); }, 1900);
+    setTimeout(function () { pt.className = ''; busy = false; route(); }, 2450);
+  }
+
+  function route() {
+    var h = location.hash.replace(/^#/, ''), m = h.match(/^projeto\/(.+)$/), name, el = null;
+    if (m) name = 'portfolio';
+    else if (!h || h === 'topo') name = 'inicio';
+    else if (pageEls[h]) name = h;
+    else { el = document.getElementById(h); name = el && el.closest('.page') ? el.closest('.page').getAttribute('data-page') : 'inicio'; }
+    go(name, el && el.classList.contains('page') ? null : el);
+    if (m) { if (!openProject(decodeURIComponent(m[1]))) closeViewer(false); } else closeViewer(false);
+  }
+  window.addEventListener('hashchange', route);
+  route();
 })();
