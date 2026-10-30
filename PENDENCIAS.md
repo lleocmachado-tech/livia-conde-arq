@@ -2,7 +2,7 @@
 
 ## Contatos e dados da marca
 - [ ] Confirmar que (19) 99146-2591 é o WhatsApp e telefone definitivos (já em `js/config.js`)
-- [ ] Registro CAU real (hoje `CAU A000000-0`)
+- [x] Registro CAU real (`CAU A266794-0`)
 
 ## Conteúdo
 - [ ] Foto da Lívia: hoje é a enviada em 28/10; trocar se houver foto em melhor resolução (`assets/img/livia.jpg`)

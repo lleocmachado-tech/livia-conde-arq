@@ -19,7 +19,7 @@ window.SITE = {
   instagram: "liviaconde_arquitetura",
 
   // Registro profissional exibido no rodapé
-  cau: "CAU A000000-0",
+  cau: "CAU A266794-0",
 
   // E-mail que recebe os briefings enviados pelo site (via FormSubmit, sem cadastro).
   // Na 1ª vez, o FormSubmit manda um e-mail de ativação para este endereço: clique no link.
