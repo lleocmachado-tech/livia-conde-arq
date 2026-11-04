@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Troque o domínio quando tiver o definitivo
-Sitemap: https://liviaconde.vercel.app/sitemap.xml
+Sitemap: https://liviaconde.com.br/sitemap.xml
