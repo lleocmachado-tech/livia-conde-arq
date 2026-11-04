@@ -157,39 +157,6 @@ window.PROJETOS = [
     destaque: true
   },
   {
-    id: "amarilis-resto-bar",
-    titulo: "Amarílis Resto Bar",
-    categoria: "Comercial",
-    local: "",
-    ano: "",
-    area: "",
-    etapa: "Projeto",
-    resumo: "Fachada vazada com letreiro marcante e varanda de vidro, pensada para chamar atenção e receber bem.",
-    capa: "assets/img/projetos/amarilis-1-thumb.jpg",
-    fotos: [
-      "assets/img/projetos/amarilis-1.jpg"
-    ],
-    foco: "50% 40%",
-    comparar: null,
-    destaque: true
-  },
-  {
-    id: "bistro-da-idi",
-    titulo: "Bistrô da IDI",
-    categoria: "Comercial",
-    local: "",
-    ano: "",
-    area: "",
-    etapa: "Projeto",
-    resumo: "Fachada em tons escuros com iluminação quente e toldo, que deixa o bistrô aconchegante à noite.",
-    capa: "assets/img/projetos/bistro-idi-1-thumb.jpg",
-    fotos: [
-      "assets/img/projetos/bistro-idi-1.jpg"
-    ],
-    comparar: null,
-    destaque: false
-  },
-  {
     id: "tulipas-lounge",
     titulo: "Tulipa's Lounge",
     categoria: "Comercial",
@@ -259,35 +226,18 @@ window.PROJETOS = [
     destaque: false
   },
   {
-    id: "academia-condominio",
-    titulo: "Academia para Condomínio",
+    id: "residencial-nova-holanda",
+    titulo: "Residencial Nova Holanda",
     categoria: "Comercial",
     local: "",
     ano: "",
     area: "",
     etapa: "Projeto",
-    resumo: "Tijolo aparente, madeira e vidro, com a academia aberta para o jardim do condomínio.",
-    capa: "assets/img/projetos/academia-1-thumb.jpg",
+    resumo: "Portaria em tijolo aparente com arcos e telhado cerâmico, vista à noite.",
+    capa: "assets/img/projetos/nova-holanda-1-thumb.jpg",
     fotos: [
-      "assets/img/projetos/academia-1.jpg"
+      "assets/img/projetos/nova-holanda-1.jpg"
     ],
-    comparar: null,
-    destaque: true
-  },
-  {
-    id: "stevanatto-store",
-    titulo: "Stevanatto Store",
-    categoria: "Comercial",
-    local: "",
-    ano: "",
-    area: "",
-    etapa: "Projeto",
-    resumo: "Loja com nichos em pedra e madeira, escada escultural e iluminação de destaque.",
-    capa: "assets/img/projetos/stevanatto-1-thumb.jpg",
-    fotos: [
-      "assets/img/projetos/stevanatto-1.jpg"
-    ],
-    foco: "50% 50%",
     comparar: null,
     destaque: false
   },
@@ -308,17 +258,34 @@ window.PROJETOS = [
     destaque: false
   },
   {
-    id: "residencial-nova-holanda",
-    titulo: "Residencial Nova Holanda",
+    id: "stevanatto-store",
+    titulo: "Stevanatto Store",
     categoria: "Comercial",
     local: "",
     ano: "",
     area: "",
     etapa: "Projeto",
-    resumo: "Portaria em tijolo aparente com arcos e telhado cerâmico, vista à noite.",
-    capa: "assets/img/projetos/nova-holanda-1-thumb.jpg",
+    resumo: "Loja com nichos em pedra e madeira, escada escultural e iluminação de destaque.",
+    capa: "assets/img/projetos/stevanatto-1-thumb.jpg",
     fotos: [
-      "assets/img/projetos/nova-holanda-1.jpg"
+      "assets/img/projetos/stevanatto-1.jpg"
+    ],
+    foco: "50% 50%",
+    comparar: null,
+    destaque: false
+  },
+  {
+    id: "bistro-da-idi",
+    titulo: "Bistrô da IDI",
+    categoria: "Comercial",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Fachada em tons escuros com iluminação quente e toldo, que deixa o bistrô aconchegante à noite.",
+    capa: "assets/img/projetos/bistro-idi-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/bistro-idi-1.jpg"
     ],
     comparar: null,
     destaque: false
@@ -338,6 +305,39 @@ window.PROJETOS = [
     ],
     comparar: null,
     destaque: false
+  },
+  {
+    id: "amarilis-resto-bar",
+    titulo: "Amarílis Resto Bar",
+    categoria: "Comercial",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Fachada vazada com letreiro marcante e varanda de vidro, pensada para chamar atenção e receber bem.",
+    capa: "assets/img/projetos/amarilis-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/amarilis-1.jpg"
+    ],
+    foco: "50% 40%",
+    comparar: null,
+    destaque: true
+  },
+  {
+    id: "academia-condominio",
+    titulo: "Academia para Condomínio",
+    categoria: "Comercial",
+    local: "",
+    ano: "",
+    area: "",
+    etapa: "Projeto",
+    resumo: "Tijolo aparente, madeira e vidro, com a academia aberta para o jardim do condomínio.",
+    capa: "assets/img/projetos/academia-1-thumb.jpg",
+    fotos: [
+      "assets/img/projetos/academia-1.jpg"
+    ],
+    comparar: null,
+    destaque: true
   },
   {
     id: "interiores-cidade-jardim",
