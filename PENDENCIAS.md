@@ -20,7 +20,7 @@
 ## Publicação
 - [ ] Domínio próprio: trocar `liviaconde.vercel.app` em `index.html`, `robots.txt`, `sitemap.xml`
 - [ ] Imagem de compartilhamento (Open Graph): hoje usa `casa-campo-1.jpg`; ideal 1200×630
-- [ ] Clicar no link de ativação do FormSubmit que chega em liviacondearq@gmail.com (1ª vez) e conferir um briefing de teste
+- [ ] Fazer um briefing de teste e conferir a mensagem que chega no WhatsApp
 - [ ] Backend próprio (fase futura): permitir anexo no formulário e guardar briefings
 - [ ] Rodar Lighthouse no site publicado (meta mobile ≥ 90)
 - [ ] Analítica: desligada; ativar só com aviso de cookies

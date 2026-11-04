@@ -384,7 +384,8 @@ html:not(.js) .hero-a { opacity: 1; transform: none; }
 
 /* ---------- Contato ---------- */
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
-.contact-grid a { display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 30px 26px; background: var(--white); border: 1px solid rgba(21, 48, 75, .12); text-decoration: none; border-radius: var(--r); transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s; }
+.contact-grid .c-val--copy, .footer .c-copy { user-select: all; -webkit-user-select: all; cursor: text; }
+.contact-grid a, .contact-grid .copy { display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 30px 26px; background: var(--white); border: 1px solid rgba(21, 48, 75, .12); text-decoration: none; border-radius: var(--r); transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s; }
 .contact-grid a:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -24px rgba(21, 48, 75, .35); border-color: var(--terra); }
 .contact-grid svg { width: 30px; height: 30px; fill: none; stroke: var(--terra); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; margin-bottom: 14px; }
 .contact-grid svg .f { fill: var(--terra); stroke: none; }

@@ -26,7 +26,6 @@
   $$('[data-cfg]').forEach(function (el) { el.textContent = S[el.getAttribute('data-cfg')] || ''; });
   $$('[data-wa]').forEach(function (el) { el.href = waUrl(el.getAttribute('data-msg') || S.mensagemPadrao); });
   $$('[data-tel]').forEach(function (el) { el.href = 'tel:' + S.telefoneLink; });
-  $$('[data-mail]').forEach(function (el) { el.href = 'mailto:' + S.email; });
   $$('[data-ig]').forEach(function (el) { el.href = igUrl; });
   var anoEl = $('#ano'); if (anoEl) anoEl.textContent = new Date().getFullYear();
 
@@ -35,7 +34,7 @@
   if (ld) {
     try {
       var o = JSON.parse(ld.textContent);
-      o.telephone = S.telefoneLink; o.email = S.email; o.sameAs = [igUrl];
+      o.telephone = S.telefoneLink; o.sameAs = [igUrl];
       ld.textContent = JSON.stringify(o);
     } catch (e) {}
   }
@@ -365,7 +364,8 @@
 
   function value(name) { var el = F.elements[name]; return el ? (el.value || '').trim() : ''; }
 
-  $('#send-wa').addEventListener('click', function () {
+  F.addEventListener('submit', function (e) {
+    e.preventDefault();
     if (!validate(step)) return;
     var linhas = ['Olá, Lívia! Preenchi o briefing no site:', '',
       '*Serviço:* ' + value('servico'),
@@ -375,29 +375,12 @@
       '*Situação:* ' + value('situacao'),
       '*Prazo:* ' + value('prazo'),
       value('mensagem') ? '*Detalhes:* ' + value('mensagem') : null,
-      '', '*Nome:* ' + value('nome'), '*E-mail:* ' + value('email'), '*WhatsApp:* ' + value('whatsapp'),
+      '', '*Nome:* ' + value('nome'), '*WhatsApp:* ' + value('whatsapp'),
       '*Prefere contato por:* ' + (F.querySelector('[name=preferencia]:checked') || {}).value];
     window.open(waUrl(linhas.filter(function (l) { return l !== null; }).join('\n')), '_blank', 'noopener');
-  });
-
-  F.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!validate(step)) return;
-    var err = $('.step-err', steps[step]), btn = $('#send-site');
-    if (!S.formEmail) { err.textContent = 'O envio pelo site ainda não está configurado. Use "Enviar pelo WhatsApp".'; return; }
-    btn.disabled = true; btn.textContent = 'Enviando…';
-    fetch('https://formsubmit.co/ajax/' + S.formEmail, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(F) })
-      .then(function (r) { return r.json(); })
-      .then(function (j) { if (j.success !== true && j.success !== 'true') throw new Error(j.message); })
-      .then(function () {
-        F.hidden = true;
-        var ok = $('#success'); ok.hidden = false; ok.focus();
-        $('.form-card').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-      })
-      .catch(function () {
-        err.textContent = 'Não foi possível enviar agora. Tente novamente ou use "Enviar pelo WhatsApp".';
-        btn.disabled = false; btn.textContent = 'Enviar pelo site';
-      });
+    F.hidden = true;
+    var ok = $('#success'); ok.hidden = false; ok.focus();
+    $('.form-card').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   });
 
   function goBriefing(servico) {

@@ -52,7 +52,7 @@ try {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como funciona o atendimento online?", "acceptedAnswer": { "@type": "Answer", "text": "A conversa é por videochamada, WhatsApp e e-mail. Você envia fotos, plantas e referências e acompanha cada etapa a distância. Quando preciso, combinamos visita técnica." } },
+    { "@type": "Question", "name": "Como funciona o atendimento online?", "acceptedAnswer": { "@type": "Answer", "text": "A conversa é por videochamada e WhatsApp. Você envia fotos, plantas e referências e acompanha cada etapa a distância. Quando preciso, combinamos visita técnica." } },
     { "@type": "Question", "name": "Vocês atendem fora da minha cidade ou do país?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, presencial e online. Definimos juntos a melhor forma de acompanhar o seu imóvel." } },
     { "@type": "Question", "name": "Qual é o prazo de um projeto?", "acceptedAnswer": { "@type": "Answer", "text": "Depende do tipo, do tamanho e do escopo. O prazo vem na proposta." } },
     { "@type": "Question", "name": "Preciso ter um terreno para começar?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Podemos começar com um terreno, com um imóvel existente ou ajudar você a analisar um terreno antes de comprar." } },
@@ -357,7 +357,7 @@ try {
     <div class="acc acc--faq">
       <div class="acc-item reveal">
         <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq1"><span class="acc-name">Como funciona o atendimento online?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
-        <div class="acc-panel" id="fq1" role="region"><div><p>A conversa é por videochamada, WhatsApp e e-mail. Você envia fotos, plantas e referências e acompanha cada etapa a distância. Quando preciso, combinamos visita técnica.</p></div></div>
+        <div class="acc-panel" id="fq1" role="region"><div><p>A conversa é por videochamada e WhatsApp. Você envia fotos, plantas e referências e acompanha cada etapa a distância. Quando preciso, combinamos visita técnica.</p></div></div>
       </div>
       <div class="acc-item reveal">
         <h3><button class="acc-btn" aria-expanded="false" aria-controls="fq2"><span class="acc-name">Vocês atendem fora da minha cidade ou do país?</span><span class="acc-ico" aria-hidden="true"></span></button></h3>
@@ -403,12 +403,7 @@ try {
     </header>
 
     <div class="form-card reveal">
-      <form id="briefing-form" name="briefing" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="Novo briefing pelo site — Lívia Conde Arquitetura">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
+      <form id="briefing-form" name="briefing" novalidate>
         <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
         <p class="progress-label" id="progress-label" aria-live="polite">Etapa 1 de 4</p>
 
@@ -457,7 +452,7 @@ try {
           <legend>Mais detalhes</legend>
           <div class="fields">
             <label class="field field--full"><span>Conte um pouco sobre o que você imagina</span><textarea name="mensagem" rows="5" placeholder="Estilo, necessidades da família, referências, dúvidas…"></textarea></label>
-            <p class="hint field--full">Tem planta ou fotos? Mande pelo WhatsApp depois de enviar.</p>
+            <p class="hint field--full">Tem planta ou fotos? Anexe na conversa do WhatsApp depois de enviar.</p>
           </div>
           <p class="step-err" role="alert"></p>
           <div class="step-nav"><button class="btn btn--line-l" type="button" data-prev>Voltar</button><button class="btn btn--terra" type="button" data-next>Continuar</button></div>
@@ -468,12 +463,10 @@ try {
           <legend>Como podemos falar com você?</legend>
           <div class="fields">
             <label class="field"><span>Nome</span><input name="nome" type="text" autocomplete="name" required data-msg="Informe o seu nome."></label>
-            <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="email" required data-msg="Informe um e-mail válido."></label>
             <label class="field"><span>WhatsApp</span><input name="whatsapp" id="f-whats" type="tel" inputmode="tel" placeholder="(00) 00000-0000" autocomplete="tel-national" required pattern="\(\d{2}\) \d{4,5}-\d{4}" data-msg="Informe o WhatsApp com DDD."></label>
             <div class="field"><span>Prefere ser contatado por</span>
               <div class="radios">
                 <label><input type="radio" name="preferencia" value="WhatsApp" checked><span>WhatsApp</span></label>
-                <label><input type="radio" name="preferencia" value="E-mail"><span>E-mail</span></label>
                 <label><input type="radio" name="preferencia" value="Ligação"><span>Ligação</span></label>
               </div></div>
             <label class="check field--full"><input type="checkbox" name="aceite_lgpd" value="sim" required data-msg="Para continuar, aceite o uso dos seus dados para o contato."><span>Concordo que meus dados sejam usados para o retorno sobre este projeto, conforme a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label>
@@ -481,17 +474,16 @@ try {
           <p class="step-err" role="alert"></p>
           <div class="step-nav step-nav--send">
             <button class="btn btn--line-l" type="button" data-prev>Voltar</button>
-            <button class="btn btn--terra" type="submit" id="send-site">Enviar pelo site</button>
-            <button class="btn btn--wa" type="button" id="send-wa">Enviar pelo WhatsApp</button>
+            <button class="btn btn--wa" type="submit" id="send-wa">Enviar pelo WhatsApp</button>
           </div>
-          <p class="hint">Ao enviar pelo WhatsApp, o resumo do briefing já aparece pronto na conversa.</p>
+          <p class="hint">O resumo do briefing já aparece pronto na conversa do WhatsApp. É só enviar.</p>
         </fieldset>
       </form>
 
       <div class="success" id="success" hidden tabindex="-1">
         <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-17"/></svg>
-        <h3>Recebemos o seu briefing!</h3>
-        <p>Obrigada pela confiança. Em breve entraremos em contato pelo canal que você escolheu.</p>
+        <h3>Sua mensagem está pronta!</h3>
+        <p>Abrimos o WhatsApp com o resumo do seu briefing. Basta enviar a mensagem para falarmos com você.</p>
         <a class="btn btn--line-l" href="#topo">Voltar ao início</a>
       </div>
     </div>
@@ -518,9 +510,9 @@ try {
       <li class="reveal" style="--d:.08s"><a data-tel>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
         <span class="c-label">Telefone</span><span class="c-val" data-cfg="telefoneExibicao"></span></a></li>
-      <li class="reveal" style="--d:.16s"><a data-mail>
+      <li class="reveal" style="--d:.16s"><div class="copy">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-        <span class="c-label">E-mail</span><span class="c-val" data-cfg="email"></span></a></li>
+        <span class="c-label">E-mail</span><span class="c-val c-val--copy" data-cfg="email"></span></div></li>
       <li class="reveal" style="--d:.24s"><a data-ig target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="f" cx="17.2" cy="6.8" r="1"/></svg>
         <span class="c-label">Instagram</span><span class="c-val" data-cfg="instagramArroba"></span></a></li>
@@ -559,7 +551,7 @@ try {
     <div>
       <h2 class="f-title">Contato</h2>
       <a data-wa target="_blank" rel="noopener"><span data-cfg="telefoneExibicao"></span></a>
-      <a data-mail><span data-cfg="email"></span></a>
+      <span class="c-copy" data-cfg="email" style="display:block"></span>
       <a data-ig target="_blank" rel="noopener"><span data-cfg="instagramArroba"></span></a>
       <p class="f-note">Atendimento nacional e internacional</p>
     </div>

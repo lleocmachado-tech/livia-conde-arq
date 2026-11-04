@@ -1,6 +1,6 @@
 # Site Lívia Conde Arquitetura
 
-Site estático (HTML + CSS + JavaScript puro). Abre com duplo clique em `index.html`. Hospedagem: Vercel. Formulário: FormSubmit.
+Site estático (HTML + CSS + JavaScript puro). Abre com duplo clique em `index.html`. Hospedagem: Vercel. Contato: só WhatsApp (o briefing monta a mensagem pronta).
 
 ## Estrutura
 
@@ -16,7 +16,7 @@ assets/img/projetos/ → fotos dos projetos
 
 ## Como trocar os contatos
 1. No GitHub (site ou GitHub Desktop), abra `js/config.js`.
-2. Troque os valores entre aspas: `whatsapp` (só números, com 55 + DDD), `telefoneExibicao`, `telefoneLink`, `email`, `instagram` (sem @), `cau`.
+2. Troque os valores entre aspas: `whatsapp` (só números, com 55 + DDD), `telefoneExibicao`, `telefoneLink`, `instagram` (sem @), `cau`.
 3. Salve (*Commit changes*). Todos os botões, cards e o rodapé usam esses dados automaticamente.
 
 ## Como adicionar um projeto
@@ -47,7 +47,7 @@ Os textos estão em `index.html` (procure por um trecho do texto com Ctrl+F). Os
 ## Publicar na Vercel
 1. Suba as alterações pelo GitHub Desktop (*Commit* e *Push*).
 2. Na Vercel: *Add New → Project*, escolha o repositório `livia-conde-arq`, deixe *Framework Preset* em **Other** e *Build Command* / *Output Directory* vazios. Clique em *Deploy*. Cada novo push publica sozinho.
-3. **Formulário de briefing:** os briefings chegam por e-mail no endereço de `formEmail` (`js/config.js`), via FormSubmit, sem cadastro. Na primeira vez, o FormSubmit envia um e-mail de ativação para esse endereço: abra e clique no link. O plano grátis não aceita anexos; o formulário pede que a pessoa mande planta/fotos pelo WhatsApp.
+3. **Formulário de briefing:** ao final das 4 etapas, as respostas viram uma mensagem pronta e abre o WhatsApp do número de `whatsapp` (`js/config.js`). Não há envio por e-mail.
 4. Com o domínio definido, troque `liviaconde.vercel.app` em `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` e `sitemap.xml`.
 
 ## Analítica

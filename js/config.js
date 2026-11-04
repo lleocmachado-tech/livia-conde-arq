@@ -13,6 +13,7 @@ window.SITE = {
   telefoneExibicao: "(19) 99146-2591",
   telefoneLink: "+5519991462591",
 
+  // E-mail: só exibido para copiar (sem link nem envio pelo site)
   email: "liviacondearq@gmail.com",
 
   // Instagram: só o usuário, sem @
@@ -20,10 +21,6 @@ window.SITE = {
 
   // Registro profissional exibido no rodapé
   cau: "CAU A266794-0",
-
-  // E-mail que recebe os briefings enviados pelo site (via FormSubmit, sem cadastro).
-  // Na 1ª vez, o FormSubmit manda um e-mail de ativação para este endereço: clique no link.
-  formEmail: "liviacondearq@gmail.com",
 
   // Mensagem padrão do botão flutuante de WhatsApp
   mensagemPadrao: "Olá, Lívia! Vim pelo site e gostaria de mais informações sobre os seus serviços."
