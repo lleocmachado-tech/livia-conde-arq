@@ -174,7 +174,7 @@
 
   grid.innerHTML = PROJ.map(function (p) {
     return '<li class="card' + (p.destaque ? ' card--big' : '') + '" data-cat="' + esc(p.categoria) + '">' +
-      '<button class="card-btn" type="button" data-id="' + esc(p.id) + '" aria-label="Abrir projeto ' + esc(p.titulo) + '"">' +
+      '<button class="card-btn" type="button" data-id="' + esc(p.id) + '" aria-label="Abrir projeto ' + esc(p.titulo) + '">' +
       '<span class="bgblur" style="background-image:url(' + esc(p.capa) + ')"></span>' +
       '<img src="' + esc(p.fotos[0] || p.capa) + '" alt="Render do projeto ' + esc(p.titulo) + ' (' + esc(p.categoria) + ')" width="1600" height="900" loading="lazy">' +
       '<span class="card-info"><span class="card-cat">' + esc(p.categoria) + '</span><span class="card-title">' + esc(p.titulo) + '</span></span><span class="card-go" aria-hidden="true"></span>' +
@@ -447,7 +447,9 @@
     else if (pageEls[h]) name = h;
     else { el = document.getElementById(h); name = el && el.closest('.page') ? el.closest('.page').getAttribute('data-page') : 'inicio'; }
     go(name, el && el.classList.contains('page') ? null : el);
-    if (m) { if (!openProject(decodeURIComponent(m[1]))) closeViewer(false); } else closeViewer(false);
+    var pid = null;
+    if (m) { try { pid = decodeURIComponent(m[1]); } catch (e) {} }
+    if (pid !== null) { if (!openProject(pid)) closeViewer(false); } else closeViewer(false);
   }
   window.addEventListener('hashchange', route);
   route();
